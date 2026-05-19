@@ -2,34 +2,15 @@ import React from 'react';
 import SectionLabel from './SectionLabel';
 import WannaTalk from './WannaTalk';
 import ThoughtDetailModal from './ThoughtDetail';
+import { OBSERVE_POPUPS, ObservePopup } from '../data/observe';
 
 interface ObserveProps {
 }
 
 const Observe: React.FC<ObserveProps> = () => {
-  // Mobile-specific interfaces
-  interface ThoughtConfig {
-    text: string;
-    image?: {
-      src: string;
-      width: string;
-      x: number;
-      y: number;
-    };
-  }
+  const [selectedThought, setSelectedThought] = React.useState<ObservePopup | null>(null);
 
-  const [selectedThought, setSelectedThought] = React.useState<ThoughtConfig | null>(null);
-
-  const thoughts: ThoughtConfig[] = [
-    {
-      text: "Highschool Student Assessment or fastest-finger-first competition?",
-      image: { src: 'images/study_1.png', width: '160px', x: 12, y: 0 }
-    },
-    {
-      text: "Digital Product vs Architecture - a type of huge physical product",
-      image: { src: 'images/study_3.png', width: '160px', x: 12, y: 0 }
-    }
-  ];
+  const thoughts = OBSERVE_POPUPS;
 
   return (
     <section className="w-full md:h-screen relative md:overflow-hidden flex flex-col items-center flex-1">
@@ -92,7 +73,7 @@ const Observe: React.FC<ObserveProps> = () => {
       <div className="hidden md:flex fixed inset-0 w-full h-full flex-col items-center justify-center pointer-events-none">
 
         {/* Desktop Section Label */}
-        <div className="fixed top-1/2 left-0 w-full -translate-y-1/2 flex items-center justify-start z-10 pl-6">
+        <div className="fixed top-1/2 left-0 w-full -translate-y-1/2 flex items-center justify-start z-10">
           <SectionLabel
             text="what's around me"
             width="214px"

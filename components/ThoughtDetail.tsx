@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DEFAULT_ARTICLE, ContentBlock } from '../data/thought-content';
+import { ContentBlock, ThoughtArticle } from '../data/thought-content';
 import ScrollToTop from './ScrollToTop';
 
 interface ThoughtInfo {
     text: string;
+    article: ThoughtArticle;
     image?: {
         src: string;
     };
@@ -20,6 +21,7 @@ interface ThoughtDetailProps {
 // Inner component to handle scroll logic safely when mounted
 const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }> = ({ data, onClose }) => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const article = data.article;
 
     return createPortal(
         <>
@@ -59,6 +61,8 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             marginLeft: 'var(--popup-margin-x)',
                             marginRight: 'var(--popup-margin-x)',
                             minHeight: '85vh', // Ensure it fills at least the "visible" part initially
+                            borderRadius: '15px',
+                            overflow: 'hidden',
                         }}
                     >
                         {/* Close Button - Absolute inside Modal */}
@@ -115,12 +119,12 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             <div className="prose prose-xl max-w-none mobile-body">
                                 {/* Dynamic Intro */}
                                 <p className="text-gray-900 mb-12 font-stix text-3xl leading-relaxed italic border-l-4 border-[#1d3413] pl-8">
-                                    {DEFAULT_ARTICLE.intro}
+                                    {article.intro}
                                 </p>
 
                                 <div className="space-y-12 text-gray-700 font-inter leading-relaxed text-lg">
                                     {/* Dynamic Blocks */}
-                                    {DEFAULT_ARTICLE.blocks.map((block: ContentBlock, index: number) => {
+                                    {article.blocks.map((block: ContentBlock, index: number) => {
                                         if (block.type === 'paragraph' && block.content) {
                                             return <p key={index}>{block.content}</p>;
                                         }
@@ -181,7 +185,6 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
            .modal-card {
                 width: 100% !important;
                 margin: 0 !important;
-                border-radius: 0 !important;
                 min-height: 100vh;
            }
            .h-\\[15vh\\] {

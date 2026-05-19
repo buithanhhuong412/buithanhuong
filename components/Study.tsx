@@ -38,7 +38,7 @@ const Study: React.FC<StudyProps> = () => {
   return (
     <section className="w-full md:h-screen relative overflow-hidden flex-grow flex flex-col md:block flex-1">
       {/* Mobile Layout - Full height, No scroll, WannaTalk at bottom */}
-      <div className="md:hidden w-full h-full flex flex-col justify-between items-center pt-[60px] px-6">
+      <div className="md:hidden w-full h-full flex flex-col justify-between items-center pt-[60px]">
         {/* Header Block */}
         <div className="w-full flex justify-center">
           <SectionLabel

@@ -33,7 +33,7 @@ const Contact: React.FC<ContactProps> = () => {
         {
             label: "unsplash",
             text: "/buithanhhuong",
-            link: "https://unsplash.com/@buithanhuong/illustrations"
+            link: "https://unsplash.com/@buithanhhuong/illustrations"
         },
         {
             label: "threads",
@@ -76,7 +76,7 @@ const Contact: React.FC<ContactProps> = () => {
 
             {/* Main Content - Bottom aligned */}
             <div className="w-full flex flex-col justify-end items-center z-10 flex-1 md:flex-none">
-                <div className="relative w-full md:w-fit mx-auto px-4 md:px-0 md:translate-x-[50px]">
+                <div className="relative w-full md:w-fit mx-auto px-4 md:px-0">
                     {/* Ghost Element from Hero to force identical centering */}
                     <div className="flex flex-col select-none w-full space-y-4 opacity-0 pointer-events-none h-0 overflow-hidden">
                         <div className="w-full text-left ml-[340px]"><h1 className="hero-title">I WALK</h1></div>
@@ -88,9 +88,9 @@ const Contact: React.FC<ContactProps> = () => {
                     </div>
 
                     {/* Actual Content aligned with ghost structure */}
-                    <div className="ml-0 md:ml-[340px] flex flex-col space-y-4 text-left md:text-left px-0 md:px-[48px] py-[32px] w-full">
+                    <div className="ml-0 md:ml-[340px] flex flex-col space-y-4 text-left md:text-left px-0 md:px-[16px] py-[32px] w-full">
                         {contacts.map((item, i) => (
-                            <div key={i} className="flex flex-row items-baseline gap-[20px] md:gap-[100px]">
+                            <div key={i} className="flex flex-row items-baseline gap-4 md:gap-8">
                                 <span className="text-[16px] font-stix text-[#1d3413] leading-[20px] min-w-[120px]">
                                     {item.label}
                                 </span>
@@ -98,7 +98,7 @@ const Contact: React.FC<ContactProps> = () => {
                                     href={item.link || "#"}
                                     target={item.link?.startsWith('http') ? '_blank' : undefined}
                                     rel={item.link?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                    className="group relative block w-fit text-[16px] font-stix text-[#1d3413] leading-[20px] hover:underline text-left md:text-left"
+                                    className="group relative block w-fit text-[16px] font-stix text-[#1d3413] leading-[20px] text-left md:text-left"
                                 >
                                     <span className="relative z-10">{item.text}</span>
                                 </a>

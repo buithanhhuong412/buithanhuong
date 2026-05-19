@@ -7,19 +7,13 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/autoplay';
 
-import WannaTalk from './WannaTalk';
+import ThoughtDetailModal from './ThoughtDetail';
+import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/page-experiment';
 
 const Work: React.FC = () => {
-  const originalProjects = [
-    { title: 'vgbc', img: 'images/2.avif', scale: 0.1, marginRight: 85 },
-    { title: 'a seal imprint', img: 'images/3.avif', scale: 0.07, marginRight: 155 },
-    { title: 'vnielts', img: 'images/4.avif', scale: 0.15, marginRight: 120 },
-    { title: 'fishy feast', img: 'images/5.avif', scale: 0.05, marginRight: 30 },
-    { title: 'what color was your day?', img: 'images/6.avif', scale: 0.07, marginRight: 80 },
-    { title: 'vici dentia', img: 'images/7.avif', scale: 0.18, marginRight: 100 },
-    { title: 'kickstart', img: 'images/8.png', scale: 0.1, marginRight: 50 },
-    { title: 'thêu một mùa thu', img: 'images/1.avif', scale: 0.1, marginRight: 110 },
-  ];
+  const originalProjects = PAGE_EXPERIMENT_POPUPS;
+
+  const [selectedProject, setSelectedProject] = React.useState<PageExperimentPopup | null>(null);
 
   const projects = Array(5).fill(originalProjects).flat();
   const swiperRef = useRef<SwiperType | null>(null);
@@ -122,39 +116,21 @@ const Work: React.FC = () => {
         <Swiper
           onSwiper={(s) => {
             swiperRef.current = s;
-            // Ensure autoplay starts if configured (mobile)
-            if (s.autoplay && !s.autoplay.running) {
-              s.autoplay.start();
-            }
           }}
           direction="horizontal"
           slidesPerView="auto"
           spaceBetween={0}
           loop={true}
           loopedSlides={8}
-          // Breakpoints handle the specific logic for Mobile (Autoplay) vs Desktop (FreeMode)
-          breakpoints={{
-            0: {
-              speed: 8000,
-              freeMode: false,
-              autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }
-            },
-            768: {
-              speed: 600,
-              autoplay: false,
-              freeMode: {
-                enabled: true,
-                momentum: true,
-                momentumRatio: 1,
-                momentumVelocityRatio: 1,
-                momentumBounce: false,
-                sticky: false,
-              }
-            }
+          autoplay={false}
+          speed={600}
+          freeMode={{
+            enabled: true,
+            momentum: true,
+            momentumRatio: 1,
+            momentumVelocityRatio: 1,
+            momentumBounce: false,
+            sticky: false,
           }}
           grabCursor={true}
           mousewheel={false} // Custom wheel implementation above
@@ -175,8 +151,9 @@ const Work: React.FC = () => {
               <div
                 className="space-y-4 flex flex-col items-center group flex-shrink-0 work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
+                onClick={() => setSelectedProject(p)}
               >
-                <div className="w-full overflow-hidden transition-all duration-700 cursor-crosshair max-h-[244px]">
+                <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
                   <img
                     src={p.img}
                     alt={p.title}
@@ -184,7 +161,7 @@ const Work: React.FC = () => {
                   />
                 </div>
                 <p
-                  className="font-stix text-[16px] text-[#1d3413] opacity-0 group-hover:opacity-100 transition-opacity duration-500 whitespace-nowrap mt-4 leading-[20px] text-center"
+                  className="font-stix text-[16px] text-[#1d3413] opacity-0 group-hover:opacity-100 whitespace-nowrap mt-4 leading-[20px] text-center"
                   style={{ fontFamily: '"STIX Two Text", serif', fontStyle: 'normal', fontWeight: 400 }}
                 >
                   {p.title}
@@ -195,6 +172,12 @@ const Work: React.FC = () => {
           <SwiperSlide style={{ width: '32px' }} />
         </Swiper>
       </div>
+
+      <ThoughtDetailModal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        data={selectedProject ? { text: selectedProject.title, article: selectedProject.article, image: { src: selectedProject.img } } : null}
+      />
 
     </section>
   );
