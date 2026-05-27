@@ -15,14 +15,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
     { id: 'about', label: 'I', path: '/about' },
     { id: 'study', label: 'study', path: '/study' },
     { id: 'observe', label: 'observe', path: '/observe' },
-    { id: 'work', label: 'and experiment', path: '/' }
+    { id: 'work', label: 'and experiment', path: '/page-experiment' }
   ];
 
   return (
     <nav className="relative top-0 left-0 z-50 px-[24px] pt-[32px] pb-[24px] md:py-[32px] flex md:flex-row flex-col md:justify-between md:items-center items-center bg-transparent pointer-events-none w-full h-[21px]" style={{ gap: SPACING.gap.default }}>
       {/* Block 1: Intro text */}
       <button
-        onClick={() => navigate('/hi')}
+        onClick={() => navigate('/page-experiment')}
         className={`
           relative transition-none outline-none after:transition-all after:duration-300 pointer-events-auto
           ${currentPage === 'home'
