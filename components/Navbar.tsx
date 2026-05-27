@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
     { id: 'about', label: 'I', path: '/about' },
     { id: 'study', label: 'study', path: '/study' },
     { id: 'observe', label: 'observe', path: '/observe' },
-    { id: 'work', label: 'and experiment', path: '/page-experiment' }
+    { id: 'work', label: 'and experiment', path: '/' }
   ];
 
   return (
