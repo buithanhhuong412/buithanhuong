@@ -17,27 +17,27 @@ const Contact: React.FC<ContactProps> = () => {
     const contacts: ContactConfig[] = [
         {
             label: "email",
-            text: "hi@buithanhhuong.com",
-            link: "mailto:hi@buithanhhuong.com"
+            text: "buithanhuong68@gmail.com",
+            link: "mailto:buithanhuong68@gmail.com"
         },
         {
             label: "linkedin",
-            text: "/buithanhhuong",
-            link: "https://www.linkedin.com/in/buithanhhuong/"
+            text: "/buithanhuong",
+            link: "https://www.linkedin.com/in/buithanhuong/"
         },
         {
             label: "behance",
-            text: "/buithanhhuong",
-            link: "https://www.behance.net/buithanhhuong"
+            text: "/buithanhuong",
+            link: "https://www.behance.net/buithanhuong"
         },
         {
             label: "unsplash",
-            text: "/buithanhhuong",
-            link: "https://unsplash.com/@buithanhhuong/illustrations"
+            text: "/buithanhuong",
+            link: "https://unsplash.com/@buithanhuong/illustrations"
         },
         {
             label: "threads",
-            text: "/buithanhhuong_as_usual",
+            text: "/buithanhuong_as_usual",
             link: "https://www.threads.com/@buithanhuong_as_usual"
         }
     ];
