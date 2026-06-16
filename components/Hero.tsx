@@ -302,7 +302,7 @@ const Hero: React.FC<HeroProps> = () => {
       <div className="hidden md:block absolute bottom-0 left-0 w-full pointer-events-none z-50">
         <div className="flex justify-center">
           <SectionLabel
-            text="or mostly just breathe"
+            text=["or mostly just breathe"(https://www.instagram.com/buithanhuong/)"
             width="337px"
             className="pointer-events-auto"
           />
