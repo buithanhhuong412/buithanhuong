@@ -17,8 +17,8 @@ const Contact: React.FC<ContactProps> = () => {
     const contacts: ContactConfig[] = [
         {
             label: "email",
-            text: "buithanhuong682@gmail.com",
-            link: "mailto:buithanhuong682@gmail.com"
+            text: "buithanhhuong682@gmail.com",
+            link: "mailto:buithanhhuong682@gmail.com"
         },
         {
             label: "linkedin",
