@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
               ${currentPage === item.id
                 ? ''
                 : item.id === 'about'
-                  ? 'hover:after:content-[""] hover:after:absolute hover:after:left-1/2 hover:after:-translate-x-1/2 hover:after:bottom-0 hover:after:w-[20px] hover:after:h-[0.5px] hover:after:bg-[#1d3413]'
+                  ? 'hover:after:content-[""] hover:after:absolute hover:after:left-0 hover:after:bottom-0 hover:after:w-full hover:after:h-[0.5px] hover:after:bg-[#1d3413]'
                   : 'hover:after:content-[""] hover:after:absolute hover:after:left-[-1px] hover:after:bottom-0 hover:after:w-[calc(100%+2px)] hover:after:h-[0.5px] hover:after:bg-[#1d3413]'
               }
             `}
