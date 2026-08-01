@@ -15,17 +15,15 @@ const Work: React.FC = () => {
 
   const [selectedProject, setSelectedProject] = React.useState<PageExperimentPopup | null>(null);
 
-  const projects = [
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ...originalProjects,
-  ];
+  const repeatCount = 9;
+
+  const projects = Array(repeatCount)
+    .fill(originalProjects)
+    .flat();
+  
+  const initialSlide =
+  Math.floor(repeatCount / 2) * originalProjects.length;
+
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -134,6 +132,7 @@ const Work: React.FC = () => {
           }}
           direction="horizontal"
           slidesPerView="auto"
+          initialSlide={initialSlide}
           spaceBetween={0}
           loop={false}
           loopedSlides={originalProjects.length}
