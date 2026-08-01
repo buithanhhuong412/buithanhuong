@@ -90,8 +90,8 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     className="w-full object-fill"
                                     style={{
                                         height: 'auto',
-                                        maxHeight: '70vh',
-                                        minHeight: '400px'
+                                        maxHeight: '50vh',
+                                        minHeight: '250px'
                                     }}
                                 />
                             </div>
