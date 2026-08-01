@@ -24,7 +24,7 @@ const Study: React.FC<StudyProps> = () => {
       height: "191px"
     },
     {
-      text: "Mōn - Tran Canh's ashtray",
+      text: "Mỡn - Tran Canh's ashtray",
       image: "images/image3.png",
       width: "180px",
       height: "180px"
@@ -56,7 +56,7 @@ const Study: React.FC<StudyProps> = () => {
             slidesPerView="auto"
             spaceBetween={32}
             centeredSlides={true}
-            loop={true}
+            loop={false}
             speed={6000} // Slow continuous speed
             autoplay={{
               delay: 0,
