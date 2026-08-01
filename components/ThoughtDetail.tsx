@@ -143,6 +143,20 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 >
                                     {/* Dynamic Blocks */}
                                     {article.blocks.map((block: ContentBlock, index: number) => {
+                                        if (block.type === 'grid' && block.items) {
+                                        return (
+                                            <div key={index} className="space-y-8">
+                                                {block.items.map((item, idx) => (
+                                                    <div key={idx}>
+                                                        <h4 className="font-bold mb-2">
+                                                            {item.title}
+                                                        </h4>
+                                                        <p>{item.desc}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        );
+                                    }
                                         return null;
                                     })}
 
