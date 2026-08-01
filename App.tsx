@@ -63,7 +63,7 @@ const AppContent: React.FC = () => {
       case '/about': return 'about';
       case '/study': return 'study';
       case '/observe': return 'observe';
-      case '/page-experiment': return 'work';
+      case '/experiment': return 'work';
       case '/contact': return 'contact';
       case '/play': return 'play';
       default: return 'home';
@@ -95,7 +95,7 @@ const AppContent: React.FC = () => {
               <Route path="/about" element={<About />} />
               <Route path="/study" element={<Study />} />
               <Route path="/observe" element={<Observe />} />
-              <Route path="/page-experiment" element={<Work />} />
+              <Route path="/experiment" element={<Work />} />
               <Route path="/play" element={<Play />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<Navigate to="/hi" replace />} />
@@ -132,7 +132,7 @@ const AppContent: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/study" element={<Study />} />
           <Route path="/observe" element={<Observe />} />
-          <Route path="/page-experiment" element={<Work />} />
+          <Route path="/experiment" element={<Work />} />
           <Route path="/play" element={<Play />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/hi" replace />} />
