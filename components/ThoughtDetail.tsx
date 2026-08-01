@@ -128,7 +128,10 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8"
                                     style={{
                                         color: COLORS.textPrimary,
-                                        fontFamily: TYPOGRAPHY.body,
+                                        fontFamily: TYPOGRAPHY.fontFamily.stix,
+                                        fontSize: '17px',
+                                        fontWeight: 400,
+                                        lineHeight: '20px',
                                     }}
                                 >
                                     {article.intro}
@@ -138,7 +141,10 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     className="space-y-12 leading-relaxed"
                                     style={{ 
                                         color: COLORS.textPrimary,
-                                        fontFamily: TYPOGRAPHY.body,
+                                        fontFamily: TYPOGRAPHY.fontFamily.stix,
+                                        fontSize: '17px',
+                                        fontWeight: 400,
+                                        lineHeight: '20px',
                                 >
                                     {/* Dynamic Blocks */}
                                     {article.blocks.map((block: ContentBlock, index: number) => {
