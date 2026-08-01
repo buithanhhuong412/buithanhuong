@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import WannaTalk from './WannaTalk';
 import { COLORS, TYPOGRAPHY, SPACING } from '../config/designTokens';
+import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
   currentPage: string;
@@ -57,8 +58,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
         {menuItems.map((item) => (
           <button
             key={item.id}
-            import { useNavigate } from 'react-router-dom';
-            const navigate = useNavigate();
             onClick={() => navigate(item.path)}
             className={`
               transition-none outline-none relative text-center grid place-items-center after:transition-all after:duration-300 pointer-events-auto
