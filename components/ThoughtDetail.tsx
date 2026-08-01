@@ -27,11 +27,12 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
         <>
             {/* Scrollable Overlay Container */}
             <motion.div
+                style={{ pointerEvents: 'auto' }}
                 ref={scrollContainerRef}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[9990] overflow-y-auto scroll-smooth"
+                className="fixed inset-0 z-[99999] overflow-y-auto scroll-smooth pointer-events-auto"
             >
                 {/* Backdrop (fixed relative to screen, not scrolling) */}
                 <div
@@ -54,7 +55,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 200, opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="bg-white shadow-2xl relative shrink-0 cursor-auto modal-card"
+                        className="bg-white shadow-2xl relative z-10 shrink-0 cursor-auto modal-card"
                         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside card
                         style={{
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',
@@ -227,6 +228,11 @@ const ThoughtDetail: React.FC<ThoughtDetailProps> = ({ isOpen, onClose, data }) 
         // Lock body scroll when open
         if (isOpen) {
             document.body.style.overflow = 'hidden';
+            document.body.style.pointerEvents = 'none';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.pointerEvents = '';
+        }
         } else {
             document.body.style.overflow = '';
         }
