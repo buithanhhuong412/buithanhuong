@@ -61,7 +61,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         className="shadow-2xl relative z-10 shrink-0 cursor-auto modal-card pointer-events-auto"
                         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside card
                         style={{
-                            backgroundColor: COLORS.background,
+                            backgroundColor: COLORS.bgPrimary,
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',
                             marginLeft: 'var(--popup-margin-x)',
                             marginRight: 'var(--popup-margin-x)',
