@@ -50,8 +50,13 @@ const Hero: React.FC<HeroProps> = () => {
       text: 'THIS EARTH,',
       top: '147px',
       left: 'calc(50% - 305px)',
+      images: [
+        'images/earth.avif',
+        'images/',
+        'images/',
+        'images/',
+      ],
       image: {
-        src: 'images/earth.avif',
         width: '199px',
         height: '125px',
         top: '20px',
@@ -62,8 +67,13 @@ const Hero: React.FC<HeroProps> = () => {
       text: 'WATER THE FLOWERS',
       top: '234px',
       left: 'calc(50% - 208px)',
+      images: [
+      'images/theflower.avif',
+      'images/',
+      'images/',
+      'images/',
+      ],
       image: {
-        src: 'images/theflower.avif',
         width: '230px',
         height: '135px',
         top: '20px',
@@ -74,8 +84,14 @@ const Hero: React.FC<HeroProps> = () => {
       text: 'PAT THE LITTLE PUPPIES,',
       top: '321px',
       left: 'calc(50% - 486px)',
-      image: {
-        src: 'images/pat.avif',
+      image: [
+        'images/pat.avif',
+        'images/',
+        'images/',
+        'images/',
+        'images/',
+      ],
+        image: {
         width: '155px',
         height: '150px',
         top: '20px',
@@ -91,8 +107,13 @@ const Hero: React.FC<HeroProps> = () => {
       text: 'READ ARCHITECTURE NEWS',
       top: '495px',
       left: 'calc(50% - 446px)',
+      image: [
+        'images/news.avif',
+        'images/',
+        'images/',
+        'images/',
+      ],
       image: {
-        src: 'images/news.avif',
         width: '145px',
         height: '140px',
         top: '20px',
