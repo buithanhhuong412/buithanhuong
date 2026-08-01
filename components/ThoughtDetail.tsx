@@ -230,18 +230,14 @@ const ThoughtDetail: React.FC<ThoughtDetailProps> = ({ isOpen, onClose, data }) 
 
     if (isOpen) {
         document.body.style.overflow = 'hidden';
-        document.body.style.pointerEvents = 'none';
     } else {
         document.body.style.overflow = '';
-        document.body.style.pointerEvents = '';
     }
 
     return () => {
         document.body.style.overflow = '';
-        document.body.style.pointerEvents = '';
     };
     }, [isOpen]);
-
     if (!mounted) return null;
     return (
         <AnimatePresence>
