@@ -74,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
               fontWeight: 400,
               lineHeight: '20px',
               color: '#1D3413',
-              width: item.id === 'about' ? '32px' : 'auto',
+              width: item.id === 'about' ? '24px' : 'auto',
               paddingLeft: item.id === 'about' ? '0' : '2px',
               paddingRight: item.id === 'about' ? '0' : '2px',
               flexShrink: 0
