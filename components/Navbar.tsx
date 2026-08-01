@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
         onClick={() => navigate('/hi')}
         className={`
           relative transition-none outline-none after:transition-all after:duration-300 pointer-events-auto
-          ${currentPage === 'home'
+          ${currentPage === 'hi'
             ? ''
             : 'hover:after:content-[""] hover:after:absolute hover:after:left-0 hover:after:bottom-0 hover:after:w-full hover:after:h-[0.5px] hover:after:bg-[#1d3413]'
           }
@@ -34,8 +34,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
           fontFamily: TYPOGRAPHY.fontFamily.stix,
           fontSize: '16px',
           fontWeight: TYPOGRAPHY.body.regular.fontWeight,
-          fontStyle: currentPage === 'home' ? 'italic' : 'normal',
-          transform: currentPage === 'home' ? 'scaleX(1.035)' : 'scaleX(1)',
+          fontStyle: currentPage === 'hi' ? 'italic' : 'normal',
+          transform: currentPage === 'hi' ? 'scaleX(1.035)' : 'scaleX(1)',
           lineHeight: '20px',
           color: COLORS.textPrimary,
           display: 'inline-block',
@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
       <WannaTalk
         isActive={currentPage === 'contact'}
         className={`md:relative md:w-auto md:bottom-auto md:left-auto md:bg-transparent md:block pointer-events-auto
-          ${(currentPage === 'study' || currentPage === 'home' || currentPage === 'observe' || currentPage === 'work' || currentPage === 'contact') ? 'hidden md:block' : 'fixed bottom-0 left-0 w-full flex bg-[#faf7f3]'}
+          ${(currentPage === 'study' || currentPage === 'hi' || currentPage === 'observe' || currentPage === 'work' || currentPage === 'contact') ? 'hidden md:block' : 'fixed bottom-0 left-0 w-full flex bg-[#faf7f3]'}
         `}
       />
     </nav>
