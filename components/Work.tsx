@@ -8,7 +8,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/autoplay';
 
 import ThoughtDetailModal from './ThoughtDetail';
-import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/page-experiment';
+import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/experiment';
 
 const Work: React.FC = () => {
   const originalProjects = PAGE_EXPERIMENT_POPUPS;

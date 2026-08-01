@@ -59,14 +59,14 @@ const AppContent: React.FC = () => {
   // Map current path to a "page ID" for styling and Navbar state
   const getPageId = (path: string) => {
     switch (path) {
-      case '/hi': return 'home';
+      case '/hi': return 'hi';
       case '/about': return 'about';
       case '/study': return 'study';
       case '/observe': return 'observe';
       case '/experiment': return 'work';
       case '/contact': return 'contact';
       case '/play': return 'play';
-      default: return 'home';
+      default: return 'experiment';
     }
   };
 
@@ -90,7 +90,7 @@ const AppContent: React.FC = () => {
           {/* Mobile Content + WannaTalk together */}
           <div className={`flex-1 flex flex-col ${isMobileScrollable ? '' : 'overflow-hidden'}`}>
             <Routes>
-              <Route path="/" element={<Navigate to="/hi" replace />} />
+              <Route path="/" element={<Work />} />
               <Route path="/hi" element={<Hero />} />
               <Route path="/about" element={<About />} />
               <Route path="/study" element={<Study />} />
@@ -127,7 +127,7 @@ const AppContent: React.FC = () => {
         ${currentPage === 'home' ? 'md:overflow-hidden' : 'overflow-y-auto'} no-scrollbar`}
       >
         <Routes>
-          <Route path="/" element={<Navigate to="/hi" replace />} />
+          <Route path="/" element={<Navigate to="/experiment" replace />} />
           <Route path="/hi" element={<Hero />} />
           <Route path="/about" element={<About />} />
           <Route path="/study" element={<Study />} />
@@ -135,7 +135,7 @@ const AppContent: React.FC = () => {
           <Route path="/experiment" element={<Work />} />
           <Route path="/play" element={<Play />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/hi" replace />} />
+          <Route path="*" element={<Navigate to="/experiment" replace />} />
         </Routes>
       </main>
       <ScrollToTop />
