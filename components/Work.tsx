@@ -146,7 +146,7 @@ const Work: React.FC = () => {
             momentumBounce: false,
             sticky: false,
           }}
-          grabCursor={true}
+          grabCursor={false}
           mousewheel={false} // Custom wheel implementation above
           slidesOffsetBefore={32}
           keyboard={{
