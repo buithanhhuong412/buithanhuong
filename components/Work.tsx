@@ -19,11 +19,17 @@ const Work: React.FC = () => {
   ...originalProjects,
   ...originalProjects,
   ...originalProjects,
+  ...originalProjects,
+  ...originalProjects,
+  ...originalProjects,
+  ...originalProjects,
+  ...originalProjects,
+  ...originalProjects,
   ];
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
-    let velocityTracker = 0.6;
+    let velocityTracker = 0;
     let lastTime = Date.now();
     let animationFrame: number;
 
@@ -71,7 +77,7 @@ const Work: React.FC = () => {
       lastTime = now;
 
       // Tính velocity mới dựa trên deltaY
-      const wheelVelocity = -e.deltaY * 0.35;
+      const wheelVelocity = -e.deltaY * 0.4;
 
       // Cộng dồn velocity (để có cảm giác tích lũy khi scroll nhanh)
       velocityTracker += wheelVelocity;
