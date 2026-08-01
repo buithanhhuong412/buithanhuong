@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ContentBlock, ThoughtArticle } from '../data/thought-content';
 import ScrollToTop from './ScrollToTop';
+import { COLORS } from '../config/designTokens';
 
 interface ThoughtInfo {
     text: string;
@@ -57,9 +58,10 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 200, opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="bg-white shadow-2xl relative z-10 shrink-0 cursor-auto modal-card pointer-events-auto"
+                        className="shadow-2xl relative z-10 shrink-0 cursor-auto modal-card pointer-events-auto"
                         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside card
                         style={{
+                            backgroundColor: COLORS.background,
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',
                             marginLeft: 'var(--popup-margin-x)',
                             marginRight: 'var(--popup-margin-x)',
@@ -106,8 +108,9 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         >
                             {/* Title */}
                             <h2
-                                className="text-gray-900 mb-8 mobile-title"
+                                className="mb-8 mobile-title"
                                 style={{
+                                    color: COLORS.textPrimary,
                                     fontFamily: '"Overused Grotesk", "Inter", sans-serif',
                                     fontWeight: 350,
                                     fontSize: '60px',
@@ -121,8 +124,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
 
                             <div className="prose prose-xl max-w-none mobile-body">
                                 {/* Dynamic Intro */}
-                                <p className="text-gray-900 mb-12 font-stix text-3xl leading-relaxed italic border-l-4 border-[#1d3413] pl-8">
-                                    {article.intro}
+                                <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8"
                                 </p>
 
                                 <div className="space-y-12 text-gray-700 font-inter leading-relaxed text-lg">
