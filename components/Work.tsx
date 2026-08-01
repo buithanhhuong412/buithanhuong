@@ -39,7 +39,7 @@ const Work: React.FC = () => {
       const swiper = swiperRef.current;
 
       // Giảm dần velocity (friction)
-      velocityTracker *= 0.93;
+      velocityTracker *= 0.88;
 
       // Áp dụng velocity
       swiper.setTransition(0);
@@ -47,7 +47,6 @@ const Work: React.FC = () => {
       const newTranslate = swiper.getTranslate() + velocityTracker;
 
       swiper.setTranslate(newTranslate);
-      swiper.loopFix();
 
       swiper.updateProgress();
       swiper.updateActiveIndex();
@@ -72,13 +71,13 @@ const Work: React.FC = () => {
       lastTime = now;
 
       // Tính velocity mới dựa trên deltaY
-      const wheelVelocity = -e.deltaY * 0.4;
+      const wheelVelocity = -e.deltaY * 0.2;
 
       // Cộng dồn velocity (để có cảm giác tích lũy khi scroll nhanh)
       velocityTracker += wheelVelocity;
 
       // Giới hạn velocity tối đa
-      const maxVelocity = 40;
+      const maxVelocity = 25;
       velocityTracker = Math.max(-maxVelocity, Math.min(maxVelocity, velocityTracker));
 
       // Bắt đầu animation nếu chưa chạy
