@@ -104,7 +104,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 paddingLeft: 'var(--content-padding-x)',
                                 paddingRight: 'var(--content-padding-x)',
                                 paddingBottom: '80px',
-                                fontSize: 18px,
+                                fontSize: '18px',
                             }}
                         >
                             {/* Title */}
