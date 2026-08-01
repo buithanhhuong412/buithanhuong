@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
   ];
 
   return (
-    <nav className="relative top-0 left-0 z-50 px-[28px] pt-[36px] pb-[28px] md:py-[32px] flex md:flex-row flex-col md:justify-between md:items-center items-center bg-transparent pointer-events-none w-full h-[21px]" style={{ gap: SPACING.gap.default }}>
+    <nav className="relative top-0 left-0 z-50 px-[32px] pt-[40px] pb-[32px] md:py-[40px] flex md:flex-row flex-col md:justify-between md:items-center items-center bg-transparent pointer-events-none w-full h-[21px]" style={{ gap: SPACING.gap.default }}>
       {/* Block 1: Intro text */}
       <button
         onClick={() => navigate('/hi')}
