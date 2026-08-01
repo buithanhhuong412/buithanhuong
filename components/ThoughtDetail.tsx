@@ -235,6 +235,7 @@ const ThoughtDetail: React.FC<ThoughtDetailProps> = ({ isOpen, onClose, data }) 
             document.body.style.overflow = '';
             document.body.style.pointerEvents = '';
         }
+    )
         } else {
             document.body.style.overflow = '';
         }
