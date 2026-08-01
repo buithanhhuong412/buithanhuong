@@ -104,7 +104,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 paddingLeft: 'var(--content-padding-x)',
                                 paddingRight: 'var(--content-padding-x)',
                                 paddingBottom: '80px',
-                                fontSize: '18px',
+                                fontSize: '17px',
                             }}
                         >
                             {/* Title */}
@@ -112,7 +112,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 className="mb-8 mobile-title"
                                 style={{
                                     color: COLORS.textPrimary,
-                                    fontFamily: '"Overused Grotesk", "Inter", sans-serif',
+                                    fontFamily: TYPOGRAPHY.body,
                                     fontWeight: 350,
                                     fontSize: '46px',
                                     lineHeight: '60px',
@@ -128,18 +128,17 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8"
                                     style={{
                                         color: COLORS.textPrimary,
-                                        fontSize: '18px',
+                                        fontFamily: TYPOGRAPHY.body,
                                     }}
                                 >
                                     {article.intro}
                                 </p>
 
                                 <div
-                                    className="space-y-12 font-inter leading-relaxed"
+                                    className="space-y-12 leading-relaxed"
                                     style={{ 
                                         color: COLORS.textPrimary,
-                                        fontSize: '18px',
-                                    }}
+                                        fontFamily: TYPOGRAPHY.body,
                                 >
                                     {/* Dynamic Blocks */}
                                     {article.blocks.map((block: ContentBlock, index: number) => {

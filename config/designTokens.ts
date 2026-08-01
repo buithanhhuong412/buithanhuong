@@ -68,13 +68,13 @@ export const TYPOGRAPHY = {
   body: {
     fontFamily: "'STIX Two Text', serif",
     regular: {
-      fontSize: 16,
+      fontSize: 17,
       fontWeight: 400,
       fontStyle: 'normal',
       lineHeight: '20px',
     },
     italic: {
-      fontSize: 17,
+      fontSize: 18,
       fontWeight: 400,
       fontStyle: 'italic',
       lineHeight: '20px',
