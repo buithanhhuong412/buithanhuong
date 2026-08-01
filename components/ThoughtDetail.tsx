@@ -138,7 +138,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     className="space-y-12 font-inter leading-relaxed"
                                     style={{ 
                                         color: COLORS.textPrimary,
-                                        fontSize: 18px,
+                                        fontSize: '18px',
                                     }}
                                 >
                                     {/* Dynamic Blocks */}
