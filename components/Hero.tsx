@@ -22,6 +22,7 @@ const Hero: React.FC<HeroProps> = () => {
 
   // State for fluid scaling and positioning
   const [heroStyle, setHeroStyle] = useState(calculateStyle());
+  const [imageIndexes, setImageIndexes] = useState<Record<number, number>>({});
 
   useEffect(() => {
     const handleResize = () => {
@@ -286,7 +287,17 @@ const Hero: React.FC<HeroProps> = () => {
           {textLines.map((line, index) => (
             <div
               key={index}
-              className="hero-line whitespace-nowrap group pointer-events-auto cursor-default inline-flex items-center justify-center z-40 group-hover:z-[100] relative"
+              onMouseEnter={() => {
+                if (!line.images) return;
+
+                setImageIndexes(prev => ({
+                  ...prev,
+                  [index]:
+                    ((prev[index] ?? -1) + 1) % line.images.length,
+                }));
+              }}
+              className="hero-line ..."
+            >
               style={{
                 fontFamily: TYPOGRAPHY.hero.fontFamily,
                 fontWeight: TYPOGRAPHY.hero.fontWeight,
@@ -296,7 +307,7 @@ const Hero: React.FC<HeroProps> = () => {
               }}
             >
               {line.text}
-              {line.image && (
+              {line.images && (
                 <div
                   className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[9999]"
                   style={{
@@ -307,7 +318,10 @@ const Hero: React.FC<HeroProps> = () => {
                   }}
                 >
                   <img
-                    src={line.image.src}
+                    src={
+                      line.images?.[
+                      imageIndexes[index] ?? 0
+                    ]}
                     alt=""
                     className="w-full h-full object-cover rounded-sm"
                   />
