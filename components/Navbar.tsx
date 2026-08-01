@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
         {menuItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => navigate(item.path)}
+            onClick={() => {window.location.href = item.path;}}
             className={`
               transition-none outline-none relative text-center grid place-items-center after:transition-all after:duration-300 pointer-events-auto
               ${currentPage === item.id
