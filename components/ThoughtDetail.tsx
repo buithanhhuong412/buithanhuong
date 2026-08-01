@@ -114,7 +114,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     color: COLORS.textPrimary,
                                     fontFamily: '"Overused Grotesk", "Inter", sans-serif',
                                     fontWeight: 350,
-                                    fontSize: '32px',
+                                    fontSize: '46px',
                                     lineHeight: '60px',
                                     letterSpacing: '0%',
                                     fontStyle: 'normal',
@@ -189,7 +189,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
             /* 
               Fluid Scaling from 1440px to 1905px
             */
-            --popup-margin-x: clamp(162px, 27.53vw - 234px, 290px);
+            --popup-margin-x: clamp(220px, 30vw - 180px, 360px);
             --content-padding-x: clamp(178px, 22.8vw - 150px, 284px);
         }
         
