@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ContentBlock, ThoughtArticle } from '../data/thought-content';
 import ScrollToTop from './ScrollToTop';
-import { COLORS } from '../config/designTokens';
+import { COLORS, TYPOGRAPHY } from '../config/designTokens';
 
 interface ThoughtInfo {
     text: string;
@@ -112,7 +112,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 className="mb-8 mobile-title"
                                 style={{
                                     color: COLORS.textPrimary,
-                                    fontFamily: TYPOGRAPHY.body,
+                                    fontFamily: TYPOGRAPHY.body.fontFamily,
                                     fontWeight: 350,
                                     fontSize: '46px',
                                     lineHeight: '60px',
@@ -128,7 +128,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8"
                                     style={{
                                         color: COLORS.textPrimary,
-                                        fontFamily: TYPOGRAPHY.fontFamily.stix,
+                                        fontFamily: TYPOGRAPHY.body.fontFamily,
                                         fontSize: '17px',
                                         fontWeight: 400,
                                         lineHeight: '20px',
@@ -141,7 +141,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     className="space-y-12 leading-relaxed"
                                     style={{ 
                                         color: COLORS.textPrimary,
-                                        fontFamily: TYPOGRAPHY.fontFamily.stix,
+                                        fontFamily: TYPOGRAPHY.body.fontFamily,
                                         fontSize: '17px',
                                         fontWeight: 400,
                                         lineHeight: '20px',
