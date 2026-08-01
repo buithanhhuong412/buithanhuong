@@ -74,7 +74,7 @@ const AppContent: React.FC = () => {
   const isMobileScrollable = MOBILE_SCROLL_CONFIG[currentPage] ?? false;
 
   return (
-    <div className="app-container flex flex-col">
+    <div className="app-container min-h-screen flex flex-col">
       {/* Desktop Navbar - hidden on mobile */}
       <div className="hidden md:block">
         <Navbar currentPage={currentPage} />
@@ -122,8 +122,8 @@ const AppContent: React.FC = () => {
       `}</style>
       <main
         ref={mainRef}
-        className={`desktop-main flex-1 flex-col hidden md:flex md:justify-end
-        pt-0 ${['home', 'work', 'play', 'study', 'observe', 'about'].includes(currentPage) ? 'md:pt-0' : 'md:pt-[84px]'}
+        className={`desktop-main flex-1 flex-col hidden md:flex md:justify-start
+        pt-0 ${['home', 'hi', 'work', 'play', 'study', 'observe', 'about'].includes(currentPage) ? 'md:pt-0' : 'md:pt-[84px]'}
         ${currentPage === 'home' ? 'md:overflow-hidden' : 'overflow-y-auto'} no-scrollbar`}
       >
         <Routes>

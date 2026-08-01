@@ -25,7 +25,7 @@ const NavbarMobile: React.FC<NavbarMobileProps> = ({ currentPage, showWannaTalk 
         >
             {/* Block 1: Intro text */}
             <button
-                onClick={() => navigate('/hi')}
+                onClick={() => navigate('/experiment')}
                 className="relative transition-none outline-none after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[0.5px] after:bg-[#1d3413]"
                 style={{
                     fontFamily: TYPOGRAPHY.fontFamily.stix,

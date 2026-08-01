@@ -15,7 +15,11 @@ const Work: React.FC = () => {
 
   const [selectedProject, setSelectedProject] = React.useState<PageExperimentPopup | null>(null);
 
-  const projects = Array(5).fill(originalProjects).flat();
+  const projects = [
+  ...originalProjects,
+  ...originalProjects,
+  ...originalProjects,
+  ];
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
@@ -121,14 +125,14 @@ const Work: React.FC = () => {
           slidesPerView="auto"
           spaceBetween={0}
           loop={true}
-          loopedSlides={8}
+          loopedSlides={originalProjects.length}
           autoplay={false}
           speed={600}
           freeMode={{
             enabled: true,
             momentum: true,
-            momentumRatio: 1,
-            momentumVelocityRatio: 1,
+            momentumRatio: 0.8,
+            momentumVelocityRatio: 0.8,
             momentumBounce: false,
             sticky: false,
           }}
