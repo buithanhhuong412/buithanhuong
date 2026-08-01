@@ -43,7 +43,12 @@ const Work: React.FC = () => {
 
       // Áp dụng velocity
       swiper.setTransition(0);
-      swiper.setTranslate(swiper.getTranslate() + velocityTracker);
+
+      const newTranslate = swiper.getTranslate() + velocityTracker;
+
+      swiper.setTranslate(newTranslate);
+      swiper.loopFix();
+
       swiper.updateProgress();
       swiper.updateActiveIndex();
       swiper.updateSlidesClasses();
@@ -118,6 +123,7 @@ const Work: React.FC = () => {
         </div>
 
         <Swiper
+          watchOverflow={false}
           onSwiper={(s) => {
             swiperRef.current = s;
           }}
@@ -129,12 +135,7 @@ const Work: React.FC = () => {
           autoplay={false}
           speed={600}
           freeMode={{
-            enabled: true,
-            momentum: true,
-            momentumRatio: 0.8,
-            momentumVelocityRatio: 0.8,
-            momentumBounce: false,
-            sticky: false,
+            enabled: false,
           }}
           grabCursor={true}
           mousewheel={false} // Custom wheel implementation above
