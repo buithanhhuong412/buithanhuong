@@ -145,6 +145,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                         fontSize: '17px',
                                         fontWeight: 400,
                                         lineHeight: '20px',
+                                    }}
                                 >
                                     {/* Dynamic Blocks */}
                                     {article.blocks.map((block: ContentBlock, index: number) => {
