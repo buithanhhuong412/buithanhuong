@@ -226,24 +226,21 @@ const ThoughtDetail: React.FC<ThoughtDetailProps> = ({ isOpen, onClose, data }) 
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
-        // Lock body scroll when open
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.pointerEvents = 'none';
-        } else {
-            document.body.style.overflow = '';
-            document.body.style.pointerEvents = '';
-        }
-    )
-        } else {
-            document.body.style.overflow = '';
-        }
-        return () => {
-            document.body.style.overflow = '';
-        }
-    }, [isOpen]);
+    setMounted(true);
 
+    if (isOpen) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.pointerEvents = 'none';
+    } else {
+        document.body.style.overflow = '';
+        document.body.style.pointerEvents = '';
+    }
+
+    return () => {
+        document.body.style.overflow = '';
+        document.body.style.pointerEvents = '';
+    };
+    }, [isOpen]);
     if (!mounted) return null;
 
     return (
