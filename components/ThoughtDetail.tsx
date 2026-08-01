@@ -61,12 +61,12 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         className="shadow-2xl relative z-10 shrink-0 cursor-auto modal-card pointer-events-auto"
                         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside card
                         style={{
-                            backgroundColor: COLORS.bgPrimary,
+                            backgroundColor: COLORS.bgLight,
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',
                             marginLeft: 'var(--popup-margin-x)',
                             marginRight: 'var(--popup-margin-x)',
                             minHeight: '85vh', // Ensure it fills at least the "visible" part initially
-                            borderRadius: '15px',
+                            borderRadius: '16px',
                             overflow: 'hidden',
                         }}
                     >
@@ -103,7 +103,8 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             style={{
                                 paddingLeft: 'var(--content-padding-x)',
                                 paddingRight: 'var(--content-padding-x)',
-                                paddingBottom: '80px'
+                                paddingBottom: '80px',
+                                fontSize: 18px,
                             }}
                         >
                             {/* Title */}
@@ -113,7 +114,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     color: COLORS.textPrimary,
                                     fontFamily: '"Overused Grotesk", "Inter", sans-serif',
                                     fontWeight: 350,
-                                    fontSize: '60px',
+                                    fontSize: '32px',
                                     lineHeight: '60px',
                                     letterSpacing: '0%',
                                     fontStyle: 'normal',
@@ -127,15 +128,18 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8"
                                     style={{
                                         color: COLORS.textPrimary,
-                                        fontSize: '17px',
+                                        fontSize: '18px',
                                     }}
                                 >
                                     {article.intro}
                                 </p>
 
                                 <div
-                                    className="space-y-12 font-inter leading-relaxed text-lg"
-                                    style={{ color: COLORS.textPrimary }}
+                                    className="space-y-12 font-inter leading-relaxed"
+                                    style={{ 
+                                        color: COLORS.textPrimary,
+                                        fontSize: 18px,
+                                    }}
                                 >
                                     {/* Dynamic Blocks */}
                                     {article.blocks.map((block: ContentBlock, index: number) => {
