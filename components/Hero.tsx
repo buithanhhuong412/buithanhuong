@@ -85,7 +85,7 @@ const Hero: React.FC<HeroProps> = () => {
       text: 'PAT THE LITTLE PUPPIES,',
       top: '321px',
       left: 'calc(50% - 486px)',
-      image: [
+      images: [
         'images/pat.avif',
         'images/7.avif',
         'images/8.avif',
@@ -108,7 +108,7 @@ const Hero: React.FC<HeroProps> = () => {
       text: 'READ ARCHITECTURE NEWS',
       top: '495px',
       left: 'calc(50% - 446px)',
-      image: [
+      images: [
         'images/news.avif',
         'images/3.avif',
         'images/4.avif',
@@ -288,7 +288,7 @@ const Hero: React.FC<HeroProps> = () => {
             <div
               key={index}
               onMouseEnter={() => {
-                if (!line.images) return;
+                if (!('images' in line)) return;
 
                 setImageIndexes(prev => ({
                   ...prev,
@@ -296,8 +296,7 @@ const Hero: React.FC<HeroProps> = () => {
                     ((prev[index] ?? -1) + 1) % line.images.length,
                 }));
               }}
-              className="hero-line ..."
-            >
+              className="hero-line whitespace-nowrap group pointer-events-auto cursor-default inline-flex items-center justify-center z-40 group-hover:z-[100] relative"
               style={{
                 fontFamily: TYPOGRAPHY.hero.fontFamily,
                 fontWeight: TYPOGRAPHY.hero.fontWeight,
