@@ -33,6 +33,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 z-[99999] overflow-y-auto scroll-smooth pointer-events-auto"
+                onWheel={(e) => e.stopPropagation()}
             >
                 {/* Backdrop (fixed relative to screen, not scrolling) */}
                 <div
@@ -42,8 +43,9 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                 {/* Layout Wrapper: Spans full scrollable height */}
                 {/* Added onClick={onClose} to handle clicks outside the card */}
                 <div
-                    className="min-h-full flex flex-col items-center cursor-pointer"
+                    className="min-h-full flex flex-col items-center cursor-pointer pointer-events-auto"
                     onClick={onClose}
+                    onWheel={(e) => e.stopPropagation()}
                 >
 
                     {/* Top Spacer: 15% of viewport initially */}
@@ -55,7 +57,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: 200, opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="bg-white shadow-2xl relative z-10 shrink-0 cursor-auto modal-card"
+                        className="bg-white shadow-2xl relative z-10 shrink-0 cursor-auto modal-card pointer-events-auto"
                         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside card
                         style={{
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',

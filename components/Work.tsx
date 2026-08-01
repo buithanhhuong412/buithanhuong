@@ -23,7 +23,7 @@ const Work: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
-    let velocityTracker = 0;
+    let velocityTracker = 0.6;
     let lastTime = Date.now();
     let animationFrame: number;
 
@@ -39,7 +39,7 @@ const Work: React.FC = () => {
       const swiper = swiperRef.current;
 
       // Giảm dần velocity (friction)
-      velocityTracker *= 0.88;
+      velocityTracker *= 0.94;
 
       // Áp dụng velocity
       swiper.setTransition(0);
@@ -71,13 +71,13 @@ const Work: React.FC = () => {
       lastTime = now;
 
       // Tính velocity mới dựa trên deltaY
-      const wheelVelocity = -e.deltaY * 0.2;
+      const wheelVelocity = -e.deltaY * 0.35;
 
       // Cộng dồn velocity (để có cảm giác tích lũy khi scroll nhanh)
       velocityTracker += wheelVelocity;
 
       // Giới hạn velocity tối đa
-      const maxVelocity = 25;
+      const maxVelocity = 40;
       velocityTracker = Math.max(-maxVelocity, Math.min(maxVelocity, velocityTracker));
 
       // Bắt đầu animation nếu chưa chạy
@@ -129,12 +129,17 @@ const Work: React.FC = () => {
           direction="horizontal"
           slidesPerView="auto"
           spaceBetween={0}
-          loop={true}
+          loop={false}
           loopedSlides={originalProjects.length}
           autoplay={false}
           speed={600}
           freeMode={{
-            enabled: false,
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.8,
+            momentumVelocityRatio: 0.8,
+            momentumBounce: false,
+            sticky: false,
           }}
           grabCursor={true}
           mousewheel={false} // Custom wheel implementation above
@@ -173,7 +178,6 @@ const Work: React.FC = () => {
               </div>
             </SwiperSlide>
           ))}
-          <SwiperSlide style={{ width: '32px' }} />
         </Swiper>
       </div>
 
