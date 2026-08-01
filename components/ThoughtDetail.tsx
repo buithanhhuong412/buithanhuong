@@ -225,25 +225,24 @@ const ThoughtDetail: React.FC<ThoughtDetailProps> = ({ isOpen, onClose, data }) 
     // Only render on client side to avoid hydration mismatch with Portal
     const [mounted, setMounted] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     setMounted(true);
 
     if (isOpen) {
         document.body.style.overflow = 'hidden';
         document.body.style.pointerEvents = 'none';
-        } else {
+    } else {
         document.body.style.overflow = '';
         document.body.style.pointerEvents = '';
-        }
     }
-    )
+
     return () => {
         document.body.style.overflow = '';
         document.body.style.pointerEvents = '';
     };
     }, [isOpen]);
-    if (!mounted) return null;
 
+    if (!mounted) return null;
     return (
         <AnimatePresence>
             {isOpen && data && (
