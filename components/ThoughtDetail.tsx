@@ -195,7 +195,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
             /* 
               Fluid Scaling from 1440px to 1905px
             */
-            --popup-margin-x: clamp(220px, 30vw - 180px, 360px);
+            --popup-margin-x: clamp(180px, 28vw - 160px, 240px);
             --content-padding-x: clamp(178px, 22.8vw - 150px, 284px);
         }
         
