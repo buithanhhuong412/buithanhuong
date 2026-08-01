@@ -125,6 +125,10 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             <div className="prose prose-xl max-w-none mobile-body">
                                 {/* Dynamic Intro */}
                                 <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8">
+                                    style={{
+                                        color: COLORS.textPrimary,
+                                        fontSize: '17px',
+                                    }}
                                 </p>
 
                                 <div className="space-y-12 text-gray-700 font-inter leading-relaxed text-lg">
