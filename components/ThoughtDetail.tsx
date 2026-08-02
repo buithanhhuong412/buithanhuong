@@ -44,7 +44,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                 {/* Layout Wrapper: Spans full scrollable height */}
                 {/* Added onClick={onClose} to handle clicks outside the card */}
                 <div
-                    className="min-h-full flex flex-col items-center cursor-pointer pointer-events-auto"
+                    className="min-h-screen flex flex-col items-center cursor-pointer pointer-events-auto py-[15vh]"
                     onClick={onClose}
                     onWheel={(e) => e.stopPropagation()}
                 >
@@ -166,8 +166,6 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                         </div>
                     </motion.div>
 
-                    {/* Bottom Spacer: 15% padding at the end */}
-                    <div className="h-[15vh] w-full shrink-0" />
                 </div>
             </motion.div>
 
