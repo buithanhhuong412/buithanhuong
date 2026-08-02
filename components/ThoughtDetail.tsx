@@ -125,17 +125,6 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
 
                             <div className="prose prose-xl max-w-none mobile-body">
                                 {/* Dynamic Intro */}
-                                <p className="mb-12 font-stix text-3xl leading-relaxed italic pl-8"
-                                    style={{
-                                        color: COLORS.textPrimary,
-                                        fontFamily: TYPOGRAPHY.body.fontFamily,
-                                        fontSize: '17px',
-                                        fontWeight: 400,
-                                        lineHeight: '20px',
-                                    }}
-                                >
-                                    {article.intro}
-                                </p>
 
                                 <div
                                     className="space-y-12 leading-relaxed"
@@ -154,9 +143,6 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                             <div key={index} className="space-y-8">
                                                 {block.items.map((item, idx) => (
                                                     <div key={idx}>
-                                                        <h4 className="font-bold mb-2">
-                                                            {item.title}
-                                                        </h4>
                                                         <p>{item.desc}</p>
                                                     </div>
                                                 ))}
