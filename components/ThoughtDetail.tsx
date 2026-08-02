@@ -24,7 +24,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const article = data.article;
 
-    return createPortal(
+    return (
         <>
             {/* Scrollable Overlay Container */}
             <motion.div
