@@ -114,7 +114,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     color: COLORS.textPrimary,
                                     fontFamily: TYPOGRAPHY.body.fontFamily,
                                     fontWeight: 350,
-                                    fontSize: '46px',
+                                    fontSize: '38px',
                                     lineHeight: '60px',
                                     letterSpacing: '0%',
                                     fontStyle: 'normal',
