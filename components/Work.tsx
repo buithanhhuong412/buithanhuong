@@ -13,6 +13,17 @@ import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/experiment'
 
 const Work: React.FC = () => {
   const { projectId } = useParams();
+  useEffect(() => {
+    console.log("Work mounted");
+
+    return () => {
+      console.log("Work unmounted");
+    };
+  }, []);
+  useEffect(() => {
+    console.log("projectId changed:", projectId);
+  }, [projectId]);
+  
   console.log("projectId:", projectId);
   const navigate = useNavigate();
 
