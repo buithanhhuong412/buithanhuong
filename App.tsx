@@ -98,7 +98,7 @@ const AppContent: React.FC = () => {
               <Route path="/experiment" element={<Work />} />
               <Route path="/play" element={<Play />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<Navigate to="/hi" replace />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>
 

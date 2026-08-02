@@ -53,9 +53,9 @@ const Hero: React.FC<HeroProps> = () => {
       left: 'calc(50% - 305px)',
       images: [
         'images/earth.avif',
-        'images/1.avif',
-        'images/2.avif',
-        'images/3.avif',
+        'images/earth2.png',
+        'images/earth3.png',
+        'images/earth4.png',
       ],
       image: {
         width: '199px',
@@ -70,9 +70,8 @@ const Hero: React.FC<HeroProps> = () => {
       left: 'calc(50% - 208px)',
       images: [
       'images/theflower.avif',
-      'images/4.avif',
-      'images/5.avif',
-      'images/6.avif',
+      'images/flower2.png',
+      'images/flower3.png',
       ],
       image: {
         width: '230px',
@@ -87,10 +86,8 @@ const Hero: React.FC<HeroProps> = () => {
       left: 'calc(50% - 486px)',
       images: [
         'images/pat.avif',
-        'images/7.avif',
-        'images/8.avif',
-        'images/1.avif',
-        'images/2.avif',
+        'images/pat1.png',
+        'images/pat2.png',
       ],
         image: {
         width: '155px',
@@ -110,9 +107,7 @@ const Hero: React.FC<HeroProps> = () => {
       left: 'calc(50% - 446px)',
       images: [
         'images/news.avif',
-        'images/3.avif',
-        'images/4.avif',
-        'images/5.avif',
+        'images/news1.png',
       ],
       image: {
         width: '145px',

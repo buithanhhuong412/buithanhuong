@@ -1,9 +1,9 @@
 // =====================================================================
-// Template for a /page-experiment popup.
+// Template for a /experiment popup.
 // To create a new popup:
 //   1. Duplicate this file, rename it to popup-<n>.ts
 //   2. Edit every field below
-//   3. Register the file in `data/page-experiment/index.ts`
+//   3. Register the file in `data/experiment/index.ts`
 // Every popup file is fully self-contained — change anything in here
 // and only this popup is affected.
 // =====================================================================
