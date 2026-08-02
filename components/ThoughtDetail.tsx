@@ -33,7 +33,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[99999] overflow-y-auto scroll-smooth pointer-events-auto"
+                className="fixed inset-0 z-[99999] overflow-hidden pointer-events-auto"
                 onWheel={(e) => e.stopPropagation()}
             >
                 {/* Backdrop (fixed relative to screen, not scrolling) */}
