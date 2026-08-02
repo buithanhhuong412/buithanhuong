@@ -23,7 +23,7 @@ const Work: React.FC = () => {
   useEffect(() => {
     console.log("projectId changed:", projectId);
   }, [projectId]);
-  
+
   console.log("projectId:", projectId);
   const navigate = useNavigate();
 
@@ -159,6 +159,7 @@ const Work: React.FC = () => {
         </div>
 
         <Swiper
+          key="experiment-swiper"
           watchOverflow={false}
           onSwiper={(s) => {
             swiperRef.current = s;
