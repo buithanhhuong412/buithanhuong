@@ -91,6 +91,7 @@ const AppContent: React.FC = () => {
           <div className={`flex-1 flex flex-col ${isMobileScrollable ? '' : 'overflow-hidden'}`}>
             <Routes>
               <Route path="/" element={<Work />} />
+              <Route path="/experiment/:projectId" element={<Work />} />
               <Route path="/hi" element={<Hero />} />
               <Route path="/about" element={<About />} />
               <Route path="/study" element={<Study />} />
@@ -133,6 +134,7 @@ const AppContent: React.FC = () => {
           <Route path="/study" element={<Study />} />
           <Route path="/observe" element={<Observe />} />
           <Route path="/experiment" element={<Work />} />
+          <Route path="/experiment/:projectId" element={<Work />} />
           <Route path="/play" element={<Play />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/experiment" replace />} />
