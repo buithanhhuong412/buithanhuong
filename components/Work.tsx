@@ -13,6 +13,7 @@ import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/experiment'
 
 const Work: React.FC = () => {
   const { projectId } = useParams();
+  console.log("projectId:", projectId);
   const navigate = useNavigate();
 
   const originalProjects = PAGE_EXPERIMENT_POPUPS;
