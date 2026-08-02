@@ -44,7 +44,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                 {/* Layout Wrapper: Spans full scrollable height */}
                 {/* Added onClick={onClose} to handle clicks outside the card */}
                 <div
-                    className="min-h-screen flex flex-col items-center cursor-pointer pointer-events-auto pt-[20vh] pb-[20vh]"
+                    className="min-h-screen flex flex-col items-center cursor-pointer pointer-events-auto pt-[18vh] pb-[18vh]"
                     onClick={onClose}
                     onWheel={(e) => e.stopPropagation()}
                 >
@@ -68,7 +68,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             minHeight: '85vh', // Ensure it fills at least the "visible" part initially
                             borderRadius: '12px',
                             overflow: 'hidden',
-                            marginBottom: '10vh',
+                            marginBottom: '8vh',
                         }}
                     >
                         {/* Close Button - Absolute inside Modal */}
