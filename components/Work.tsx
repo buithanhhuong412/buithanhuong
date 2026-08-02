@@ -209,7 +209,7 @@ const Work: React.FC = () => {
 
       <ThoughtDetailModal
         isOpen={!!selectedProject}
-        onClose={() => {}
+        onClose={() => {
           navigate('/experiment');
         }}
         data={selectedProject ? { text: selectedProject.title, article: selectedProject.article, image: { src: selectedProject.img } } : null}
