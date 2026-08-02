@@ -68,7 +68,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             minHeight: '85vh', // Ensure it fills at least the "visible" part initially
                             borderRadius: '12px',
                             overflow: 'hidden',
-                            marginBottom: '15vh',
+                            marginBottom: '10vh',
                         }}
                     >
                         {/* Close Button - Absolute inside Modal */}
