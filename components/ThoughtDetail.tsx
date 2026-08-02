@@ -65,9 +65,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',
                             marginLeft: 'var(--popup-margin-x)',
                             marginRight: 'var(--popup-margin-x)',
-                            height: '85vh', // Ensure it fills at least the "visible" part initially
-                            display: 'flex',
-                            flexDirection: 'column',
+                            minHeight: '85vh', // Ensure it fills at least the "visible" part initially
                             borderRadius: '12px',
                             overflow: 'hidden',
                             marginBottom: '15vh',
