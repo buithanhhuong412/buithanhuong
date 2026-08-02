@@ -131,7 +131,7 @@ const Work: React.FC = () => {
   }, []);
 
   return (
-    <section className="h-auto md:min-h-0 md:h-screen mt-[20px] md:mt-0 py-0 md:pb-[30vh] px-0 w-full relative overflow-hidden flex flex-col md:justify-end">
+    <section className="h-screen md:min-h-0 md:h-screen mt-[20px] md:mt-0 py-0 md:pb-[30vh] px-0 w-full relative overflow-hidden flex flex-col md:justify-end">
 
       {/* Unified Swiper Layout for both Mobile and Desktop */}
       <div className="w-full h-full relative">
@@ -159,7 +159,6 @@ const Work: React.FC = () => {
         </div>
 
         <Swiper
-          key="experiment-swiper"
           watchOverflow={false}
           onSwiper={(s) => {
             swiperRef.current = s;
