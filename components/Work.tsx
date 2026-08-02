@@ -28,6 +28,9 @@ const Work: React.FC = () => {
     const project = originalProjects.find(
       (p) => p.slug === projectId
     );
+    
+    console.log("Found project:", project);
+    console.log("All slugs:", originalProjects.map(p => p.slug));
 
     if (project) {
       setSelectedProject(project);
