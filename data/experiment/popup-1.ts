@@ -4,7 +4,7 @@ import { DEFAULT_ARTICLE } from '../thought-content';
 const popup: PageExperimentPopup = {
     slug: 'vgbc',
     title: 'vgbc',
-    img: 'images/2.avif',
+    img: '/images/2.avif',
     scale: 0.1,
     marginRight: 85,
     // Replace DEFAULT_ARTICLE with an inline `{ intro, blocks }` object
