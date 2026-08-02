@@ -8,6 +8,7 @@ const About: React.FC = () => {
     { label: 'coding', desc: 'this site myself (so pround hehee)' },
     { label: 'learning', desc: 'data analytics & psychology' },
     { label: 'coloring', desc: 'what color was your day?' },
+    { label: 'crocheting', desc: 'things at felicità' },
   ];
 
   const history = [
