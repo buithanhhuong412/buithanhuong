@@ -50,7 +50,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                 >
 
                     {/* Top Spacer: 15% of viewport initially */}
-                    <div className="h-[15vh] w-full shrink-0" />
+                    {/* <div className="h-[15vh] w-full shrink-0" /> */}
 
                     {/* Modal Card */}
                     <motion.div
