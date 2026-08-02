@@ -65,7 +65,9 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                             width: 'calc(100% - (var(--popup-margin-x) * 2))',
                             marginLeft: 'var(--popup-margin-x)',
                             marginRight: 'var(--popup-margin-x)',
-                            minHeight: '85vh', // Ensure it fills at least the "visible" part initially
+                            height: '85vh', // Ensure it fills at least the "visible" part initially
+                            display: 'flex',
+                            flexDirection: 'column',
                             borderRadius: '12px',
                             overflow: 'hidden',
                             marginBottom: '15vh',
@@ -108,59 +110,66 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                 fontSize: '17px',
                             }}
                         >
-                            {/* Title */}
-                            <h2
-                                className="mb-8 mobile-title"
+                            <div
+                                className="overflow-y-auto"
                                 style={{
-                                    color: COLORS.textPrimary,
-                                    fontFamily: TYPOGRAPHY.body.fontFamily,
-                                    fontWeight: 350,
-                                    fontSize: '38px',
-                                    lineHeight: '60px',
-                                    letterSpacing: '0%',
-                                    fontStyle: 'normal',
+                                    maxHeight: 'calc(85vh - 50vh)',
                                 }}
                             >
-                                {data.text}
-                            </h2>
-
-                            <div className="prose prose-xl max-w-none mobile-body">
-                                {/* Dynamic Intro */}
-
-                                <div
-                                    className="space-y-12 leading-relaxed"
-                                    style={{ 
+                                {/* Title */}
+                                <h2
+                                    className="mb-8 mobile-title"
+                                    style={{
                                         color: COLORS.textPrimary,
                                         fontFamily: TYPOGRAPHY.body.fontFamily,
-                                        fontSize: '17px',
-                                        fontWeight: 400,
-                                        lineHeight: '20px',
+                                        fontWeight: 350,
+                                        fontSize: '38px',
+                                        lineHeight: '60px',
+                                        letterSpacing: '0%',
+                                        fontStyle: 'normal',
                                     }}
                                 >
-                                    {/* Dynamic Blocks */}
-                                    {article.blocks.map((block: ContentBlock, index: number) => {
-                                        if (block.type === 'grid' && block.items) {
-                                        return (
-                                            <div key={index} className="space-y-8">
-                                                {block.items.map((item, idx) => (
-                                                    <div key={idx}>
-                                                        <p>{item.desc}</p>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        );
-                                    }
-                                        return null;
-                                    })}
+                                    {data.text}
+                                </h2>
 
-                                    {/* Mobile Bottom Close Button */}
-                                    <div className="flex justify-center w-full md:hidden box-border" style={{ padding: '32px 32px 48px 32px' }}>
-                                        <button
-                                            onClick={onClose}
-                                            className="hover:opacity-70 transition-opacity"
-                                        >
-                                            <img src="/images/Vector-close.svg" alt="Close" width="32" height="32" />
-                                        </button>
+                                <div className="prose prose-xl max-w-none mobile-body">
+                                    {/* Dynamic Intro */}
+
+                                    <div
+                                        className="space-y-12 leading-relaxed"
+                                        style={{ 
+                                            color: COLORS.textPrimary,
+                                            fontFamily: TYPOGRAPHY.body.fontFamily,
+                                            fontSize: '17px',
+                                            fontWeight: 400,
+                                            lineHeight: '20px',
+                                        }}
+                                    >
+                                        {/* Dynamic Blocks */}
+                                        {article.blocks.map((block: ContentBlock, index: number) => {
+                                            if (block.type === 'grid' && block.items) {
+                                            return (
+                                                <div key={index} className="space-y-8">
+                                                    {block.items.map((item, idx) => (
+                                                        <div key={idx}>
+                                                            <p>{item.desc}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            );
+                                        }
+                                            return null;
+                                        })}
+
+                                        {/* Mobile Bottom Close Button */}
+                                        <div className="flex justify-center w-full md:hidden box-border" style={{ padding: '32px 32px 48px 32px' }}>
+                                            <button
+                                                onClick={onClose}
+                                                className="hover:opacity-70 transition-opacity"
+                                            >
+                                                <img src="/images/Vector-close.svg" alt="Close" width="32" height="32" />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
