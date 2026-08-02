@@ -24,7 +24,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const article = data.article;
 
-    return (
+    return createPortal(
         <>
             {/* Scrollable Overlay Container */}
             <motion.div
@@ -236,10 +236,12 @@ const ThoughtDetail: React.FC<ThoughtDetailProps> = ({ isOpen, onClose, data }) 
     if (isOpen) {
         document.body.style.overflow = 'hidden';
     } else {
+        document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
     }
 
     return () => {
+        document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
     };
     }, [isOpen]);
