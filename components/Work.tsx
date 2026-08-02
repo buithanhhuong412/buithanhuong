@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { FreeMode, Keyboard, Autoplay } from 'swiper/modules';
@@ -11,9 +12,26 @@ import ThoughtDetailModal from './ThoughtDetail';
 import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/experiment';
 
 const Work: React.FC = () => {
+  const { projectId } = useParams();
+  const navigate = useNavigate();
+
   const originalProjects = PAGE_EXPERIMENT_POPUPS;
 
   const [selectedProject, setSelectedProject] = React.useState<PageExperimentPopup | null>(null);
+    useEffect(() => {
+    if (!projectId) {
+      setSelectedProject(null);
+      return;
+    }
+
+    const project = originalProjects.find(
+      (p) => p.slug === projectId
+    );
+
+    if (project) {
+      setSelectedProject(project);
+    }
+  }, [projectId]);
 
   const repeatCount = 9;
 
@@ -165,7 +183,9 @@ const Work: React.FC = () => {
               <div
                 className="space-y-4 flex flex-col items-center group flex-shrink-0 work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
-                onClick={() => setSelectedProject(p)}
+                onClick={() => {
+                  navigate(`/experiment/${p.slug}`);
+                }}
               >
                 <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
                   <img
@@ -188,7 +208,9 @@ const Work: React.FC = () => {
 
       <ThoughtDetailModal
         isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={() => {}
+          navigate('/experiment');
+        }}
         data={selectedProject ? { text: selectedProject.title, article: selectedProject.article, image: { src: selectedProject.img } } : null}
       />
 
