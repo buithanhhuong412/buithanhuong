@@ -199,7 +199,7 @@ const Work: React.FC = () => {
                 className="space-y-4 flex flex-col items-center group flex-shrink-0 work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
-                  navigate(`/experiment/${p.slug}`);
+                  setSelectedProject(p);
                 }}
               >
                 <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
@@ -224,7 +224,7 @@ const Work: React.FC = () => {
       <ThoughtDetailModal
         isOpen={!!selectedProject}
         onClose={() => {
-          navigate('/experiment');
+          setSelectedProject(null);
         }}
         data={selectedProject ? { text: selectedProject.title, article: selectedProject.article, image: { src: selectedProject.img } } : null}
       />
