@@ -8,9 +8,9 @@
 
 @keyframes wag {
   from {
-    transform: rotate(-6deg);
+    transform: rotate(-5deg);
   }
   to {
-    transform: rotate(6deg);
+    transform: rotate(5deg);
   }
 }
