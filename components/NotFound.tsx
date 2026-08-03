@@ -23,7 +23,7 @@ export default function NotFound() {
           to="/experiment"
           className="mt-8 inline-block font-body hover:opacity-60 transition"
           style={{
-            fontSize: "18px",
+            fontSize: "17px",
             }}
         >
         back to work.
