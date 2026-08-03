@@ -15,6 +15,8 @@ export default function NotFound() {
           I walk this earth,
           <br />
           but not this path,
+          <br />
+          we're lost :)))
         </p>
 
         <Link
