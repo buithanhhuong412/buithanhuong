@@ -24,6 +24,12 @@ export default function NotFound() {
         </p>
 
          <div className="relative mx-auto mt-36 w-[184px] aspect-[230/190] dog cursor-grab">
+
+           <img
+                src="/images/coca_bg.svg"
+                alt=""
+                className="absolute inset-0 w-full h-full"
+            />
             <img
                 src="/images/coca_body.svg"
                 alt=""
