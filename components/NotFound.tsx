@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="text-center">
         <p className="font-body"
          style={{
-            fontSize: "18px",
+            fontSize: "17px",
             lineHeight: "1.4",
             margin: 0,
         }}
