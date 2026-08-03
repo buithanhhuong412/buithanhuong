@@ -23,32 +23,35 @@ export default function NotFound() {
             :))
         </p>
 
-         <div className="relative mx-auto mt-36 w-[983px] aspect-[983/426] dog cursor-grab">
+         <div className="relative mx-auto mt-36 w-[360px] h-[240px]">
 
-           <img
-            src="/images/coca_bg.svg"
-            alt=""
-            className="absolute left-1/2 top-1/2
-                        -translate-x-1/2 -translate-y-1/2
-                        w-[360px] h-auto"
-            />
+            {/* Background */}
+            <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                src="/images/coca_bg.svg"
+                alt=""
+                className="w-full h-auto"
+                />
             </div>
 
-         <div className="relative mx-auto mt-36 w-[230px] aspect-[230/190] dog cursor-grab">
+            {/* Dog */}
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-[184px] aspect-[230/190] dog cursor-grab">
+                <img
+                    src="/images/coca_body.svg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full"
+                />
 
-            <img
-                src="/images/coca_body.svg"
-                alt=""
-                className="absolute inset-0 w-full h-full"
-            />
-
-            <img
-                src="/images/coca_tail.svg"
-                alt=""
-                className="absolute inset-0 w-full h-full tail"
-            />
+                <img
+                    src="/images/coca_tail.svg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full tail"
+                />
+                </div>
             </div>
-    
+
+            </div>
       </div>
     </main>
   );
