@@ -3,14 +3,27 @@
 }
 
 .dog:hover .tail {
-  animation: wag 0.5s ease-in-out infinite alternate;
+  animation: wag 0.9s ease-in-out infinite;
 }
 
 @keyframes wag {
-  from {
-    transform: rotate(-8deg);
+  0%, 20% {
+    transform: rotate(0deg);
   }
-  to {
+
+  35% {
+    transform: rotate(12deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  65% {
     transform: rotate(8deg);
+  }
+
+  80%, 100% {
+    transform: rotate(0deg);
   }
 }
