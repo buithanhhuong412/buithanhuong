@@ -72,16 +72,28 @@ const AppContent: React.FC = () => {
   };
 
   const currentPage = getPageId(location.pathname);
+  const isNotFound = currentPage === "experiment" &&
+    ![
+      "/",
+      "/hi",
+      "/about",
+      "/study",
+      "/observe",
+      "/experiment",
+      "/play",
+      "/contact",
+    ].includes(location.pathname) &&
+    !location.pathname.startsWith("/experiment/");
   const isMobileScrollable = MOBILE_SCROLL_CONFIG[currentPage] ?? false;
 
   return (
     <div className="app-container min-h-screen flex flex-col">
       {/* Desktop Navbar - hidden on mobile */}
-      {location.pathname !== "/404" && (
-        <div className="hidden md:block">
-          <Navbar currentPage={currentPage} />
-        </div>
-      )}
+        {!isNotFound && (
+          <div className="hidden md:block">
+            <Navbar currentPage={currentPage} />
+          </div>
+        )}
 
       {/* Mobile Layout - NavbarMobile + Content + WannaTalk as unified block */}
       {/* Mobile Layout - NavbarMobile + Content + WannaTalk as unified block */}
