@@ -77,16 +77,20 @@ const AppContent: React.FC = () => {
   return (
     <div className="app-container min-h-screen flex flex-col">
       {/* Desktop Navbar - hidden on mobile */}
-      <div className="hidden md:block">
-        <Navbar currentPage={currentPage} />
-      </div>
+      {location.pathname !== "/404" && (
+        <div className="hidden md:block">
+          <Navbar currentPage={currentPage} />
+        </div>
+      )}
 
       {/* Mobile Layout - NavbarMobile + Content + WannaTalk as unified block */}
       {/* Mobile Layout - NavbarMobile + Content + WannaTalk as unified block */}
       <div className={`md:hidden flex flex-col fixed inset-0 z-50 bg-[#faf7f3] ${isMobileScrollable ? 'overflow-y-auto' : 'overflow-hidden'}`}>
         {/* Inner wrapper - contains all mobile content as unified block */}
         <div className="flex flex-col flex-1 min-h-0">
-          <NavbarMobile currentPage={currentPage} showWannaTalk={false} />
+          {location.pathname !== "/404" && (
+            <NavbarMobile currentPage={currentPage} showWannaTalk={false} />
+          )}
 
           {/* Mobile Content + WannaTalk together */}
           <div className={`flex-1 flex flex-col ${isMobileScrollable ? '' : 'overflow-hidden'}`}>
