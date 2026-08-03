@@ -13,7 +13,7 @@ import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import WannaTalk from './components/WannaTalk';
 import Lenis from 'lenis';
-import NotFound from "./pages/NotFound";
+import NotFound from "./components/NotFound";
 
 // Cấu hình scroll behavior cho mobile
 // Default: false (không scroll dọc)
