@@ -12,12 +12,14 @@ export default function NotFound() {
             margin: 0,
         }}
         >
-          we're lost :))
+          we're lost,
           <br/>
           back to{" "}
             <Link to="/experiment" className="underline">
             work
             </Link>
+            <br/>
+            :))
         </p>
 
          <img
