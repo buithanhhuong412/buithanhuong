@@ -1,0 +1,13 @@
+.tail {
+  transform-origin: 160px 110px;
+  animation: wag 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes wag {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: rotate(8deg);
+  }
+}

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "./NotFound.css";
+import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
@@ -22,11 +24,19 @@ export default function NotFound() {
             :))
         </p>
 
-         <img
-          src="/images/Frame 7.svg"
-          alt="404 illustration"
-          className="mx-auto mt-32 w-48"
-        />
+         <div className="relative mx-auto mt-12 w-[230px] aspect-[230/190]">
+            <img
+                src="/images/body.svg"
+                alt=""
+                className="absolute inset-0 w-full h-full"
+            />
+
+            <img
+                src="/images/tail.svg"
+                alt=""
+                className="absolute inset-0 w-full h-full tail"
+            />
+            </div>
     
       </div>
     </main>
