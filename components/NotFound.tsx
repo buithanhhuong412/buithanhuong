@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <main 
-    className="flex h-screen w-screen items-center justify-center bg-[#faf7f3]">
+    className="flex min-h-screen items-center justify-center bg-[#faf7f3]">
       <div className="text-center">
         <p className="font-body"
          style={{
@@ -18,14 +18,7 @@ export default function NotFound() {
           <br />
           we're lost :))
           <br/>
-          back to{" "}
-            <Link
-            to="/experiment"
-            className="underline underline-offset-2 hover:opacity-60 transition"
-            >
-            work
-            </Link>
-            .
+          back to work
         </p>
     
       </div>
