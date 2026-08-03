@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import WannaTalk from './components/WannaTalk';
 import Lenis from 'lenis';
+import NotFound from "./pages/NotFound";
 
 // Cấu hình scroll behavior cho mobile
 // Default: false (không scroll dọc)
@@ -99,7 +100,8 @@ const AppContent: React.FC = () => {
               <Route path="/experiment" element={<Work />} />
               <Route path="/play" element={<Play />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+              
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
 
