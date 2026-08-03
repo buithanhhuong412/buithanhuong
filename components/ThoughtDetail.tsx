@@ -96,7 +96,7 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
                                     alt={data.text}
                                     className="object-contain block"
                                     style={{
-                                        width: '180px',
+                                        width: '240px',
                                         maxWidth: '100%',
                                         height: 'auto'
                                     }}
