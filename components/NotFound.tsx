@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-white">
+    <main 
+    className="flex min-h-screen items-center justify-center bg-[#faf7f3]">
       <div className="text-center">
         <p className="font-body text-2xl">
           I walk this earth,
