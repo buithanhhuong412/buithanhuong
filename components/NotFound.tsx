@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import NotFoundIllustration from "../public/images/";
 
 export default function NotFound() {
   return (
@@ -24,6 +23,12 @@ export default function NotFound() {
             work
             </Link>
         </p>
+
+         <img
+          src="public/images/pat2.png"
+          alt="404 illustration"
+          className="mx-auto mt-8 w-48"
+        />
     
       </div>
     </main>
