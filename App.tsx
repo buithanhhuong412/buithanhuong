@@ -122,7 +122,7 @@ const AppContent: React.FC = () => {
           </div>
 
           {/* WannaTalk - inside unified block, at bottom - hidden on Home page (handled by Hero) and About page (handled by About) */}
-          {!['/', '/hi', '/about', '/study', '/observe', '/play', '/contact'].includes(location.pathname) && (
+          {!['/', '/hi', '/about', '/study', '/observe', '/experiment', '/contact'].includes(location.pathname) && (
             <div className="w-full bg-[#faf7f3] shrink-0">
               <WannaTalk isActive={currentPage === 'contact'} />
             </div>
@@ -142,7 +142,7 @@ const AppContent: React.FC = () => {
       <main
         ref={mainRef}
         className={`desktop-main flex-1 flex-col hidden md:flex md:justify-start
-        pt-0 ${['home', 'hi', 'work', 'play', 'study', 'observe', 'about'].includes(currentPage) ? 'md:pt-0' : 'md:pt-[84px]'}
+        pt-0 ${['home', 'hi', 'work', 'experiment', 'study', 'observe', 'about'].includes(currentPage) ? 'md:pt-0' : 'md:pt-[84px]'}
         ${currentPage === 'home' ? 'md:overflow-hidden' : 'overflow-y-auto'} no-scrollbar`}
       >
         <Routes>
