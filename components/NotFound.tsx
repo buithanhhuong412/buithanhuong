@@ -30,13 +30,13 @@ export default function NotFound() {
                 <img
                 src="/images/coca_bg.svg"
                 alt=""
-                className="w-full h-auto scale-[2]"
+                className="w-full h-auto scale-[1.8]"
                 />
             </div>
 
             {/* Dog */}
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-[184px] aspect-[230/190] dog cursor-grab">
+                <div className="relative w-[160px] aspect-[230/190] dog cursor-grab">
                 <img
                     src="/images/coca_body.svg"
                     alt=""
