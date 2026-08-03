@@ -30,7 +30,7 @@ export default function NotFound() {
                 <img
                 src="/images/coca_bg.svg"
                 alt=""
-                className="w-full h-auto scale-[3]"
+                className="w-full h-auto scale-[2]"
                 />
             </div>
 
