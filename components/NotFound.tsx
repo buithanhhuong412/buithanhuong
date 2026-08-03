@@ -5,7 +5,13 @@ export default function NotFound() {
     <main 
     className="flex min-h-screen items-center justify-center bg-[#faf7f3]">
       <div className="text-center">
-        <p className="font-body text-2xl">
+        <p className="font-body"
+         style={{
+            fontSize: "18px",
+            lineHeight: "1.4",
+            margin: 0,
+        }}
+        >
           I walk this earth,
           <br />
           but not this path,
@@ -13,7 +19,10 @@ export default function NotFound() {
 
         <Link
           to="/experiment"
-          className="mt-8 inline-block font-body uppercase tracking-widest hover:opacity-60 transition"
+          className="mt-8 inline-block font-body hover:opacity-60 transition"
+          style={{
+            fontSize: "18px",
+            }}
         >
         back to work.
         </Link>
