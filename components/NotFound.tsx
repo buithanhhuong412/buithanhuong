@@ -25,13 +25,13 @@ export default function NotFound() {
 
          <div className="relative mx-auto mt-12 w-[230px] aspect-[230/190]">
             <img
-                src="/images/body.svg"
+                src="/images/coca_body.svg"
                 alt=""
                 className="absolute inset-0 w-full h-full"
             />
 
             <img
-                src="/images/tail.svg"
+                src="/images/coca_tail.svg"
                 alt=""
                 className="absolute inset-0 w-full h-full tail"
             />
