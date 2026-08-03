@@ -1,6 +1,9 @@
 .tail {
   transform-origin: 160px 110px;
-  animation: wag 0.8s ease-in-out infinite alternate;
+}
+
+.dog:hover .tail {
+  animation: wag 0.5s ease-in-out infinite alternate;
 }
 
 @keyframes wag {
