@@ -139,7 +139,8 @@ const AppContent: React.FC = () => {
           <Route path="/experiment/:projectId" element={<Work />} />
           <Route path="/play" element={<Play />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/experiment" replace />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <ScrollToTop />
