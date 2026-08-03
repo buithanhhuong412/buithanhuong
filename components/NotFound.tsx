@@ -26,10 +26,13 @@ export default function NotFound() {
          <div className="relative mx-auto mt-36 w-[184px] aspect-[230/190] dog cursor-grab">
 
            <img
-                src="/images/coca_bg.svg"
-                alt=""
-                className="absolute inset-0 w-full h-full"
+            src="/images/coca_bg.svg"
+            alt=""
+            className="absolute left-1/2 top-1/2
+                        -translate-x-1/2 -translate-y-1/2
+                        w-[360px] h-auto"
             />
+            
             <img
                 src="/images/coca_body.svg"
                 alt=""
