@@ -16,18 +16,11 @@ export default function NotFound() {
           <br />
           but not this path,
           <br />
-          we're lost :)))
+          we're lost :))
+          <br/>
+          back to work.
         </p>
-
-        <Link
-          to="/experiment"
-          className="mt-8 inline-block font-body hover:opacity-60 transition"
-          style={{
-            fontSize: "16px",
-            }}
-        >
-        back to work.
-        </Link>
+    
       </div>
     </main>
   );
