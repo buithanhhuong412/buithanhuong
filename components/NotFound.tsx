@@ -23,7 +23,7 @@ export default function NotFound() {
             :))
         </p>
 
-         <div className="relative mx-auto mt-36 w-[360px] h-[240px]">
+         <div className="relative mx-auto mt-48 w-[360px] h-[240px]">
 
             {/* Background */}
             <div className="absolute inset-0 flex items-center justify-center">
