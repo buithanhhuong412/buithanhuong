@@ -16,7 +16,7 @@ export default function NotFound() {
           <br />
           but not this path,
           <br />
-          we're lost :))
+          we're lost :)),
           <br/>
           back to work
         </p>
