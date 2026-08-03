@@ -84,15 +84,21 @@ const ThoughtDetailContent: React.FC<{ data: ThoughtInfo; onClose: () => void }>
 
                         {/* Part 1: Full Width Image */}
                         {data.image && (
-                            <div className="w-full shrink-0">
+                            <div className="w-full shrink-0"
+                                 style={{
+                                    paddingLeft: 'var(--content-padding-x)',
+                                    paddingRight: 'var(--content-padding-x)',
+                                    paddingTop: '48px'
+                                }}
+                            >
                                 <img
                                     src={data.image.src}
                                     alt={data.text}
-                                    className="w-full object-fill"
+                                    className="object-contain block"
                                     style={{
-                                        height: 'auto',
-                                        maxHeight: '50vh',
-                                        minHeight: '250px'
+                                        width: '360px',      // chỉnh theo ý, ví dụ 300–450px
+                                        maxWidth: '100%',
+                                        height: 'auto'
                                     }}
                                 />
                             </div>
