@@ -12,7 +12,7 @@ export default function NotFound() {
             margin: 0,
         }}
         >
-          I walk this earth,
+          // I walk this earth, //
           <br />
           but not this path,
           <br />
