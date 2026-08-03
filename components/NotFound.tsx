@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import NotFoundIllustration from "../public/images/";
 
 export default function NotFound() {
   return (
@@ -7,7 +8,7 @@ export default function NotFound() {
       <div className="text-center">
         <p className="font-body"
          style={{
-            fontSize: "17px",
+            fontSize: "16px",
             lineHeight: "1.4",
             margin: 0,
         }}
