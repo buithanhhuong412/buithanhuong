@@ -3,7 +3,7 @@
 }
 
 .dog:hover .tail {
-  animation: wag 0.9s ease-in-out infinite;
+  animation: wag 0.5s ease-in-out infinite alternate;
 }
 
 @keyframes wag {
