@@ -18,7 +18,10 @@ export default function NotFound() {
           <br />
           we're lost :)),
           <br/>
-          back to work
+          back to{" "}
+            <Link to="/experiment" className="underline">
+            work
+            </Link>
         </p>
     
       </div>
