@@ -27,7 +27,7 @@ export default function NotFound() {
          <img
           src="/images/pat2.png"
           alt="404 illustration"
-          className="mx-auto mt-8 w-48"
+          className="mx-auto mt-32 w-48"
         />
     
       </div>
