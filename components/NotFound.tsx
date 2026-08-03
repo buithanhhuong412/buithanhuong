@@ -25,7 +25,7 @@ export default function NotFound() {
         </p>
 
          <img
-          src="public/images/pat2.png"
+          src="/images/pat2.png"
           alt="404 illustration"
           className="mx-auto mt-8 w-48"
         />
