@@ -54,7 +54,13 @@ const NavbarMobile: React.FC<NavbarMobileProps> = ({ currentPage, showWannaTalk 
                 {menuItems.map((item) => (
                     <button
                         key={item.id}
-                        onClick={() => navigate(item.path)}
+                        onClick={() => {
+                            if (item.id === 'observe') {
+                                window.open('https://www.threads.com/@buithanhuong_as_usual', '_blank');
+                            } else {
+                                navigate(item.path);
+                            }
+                            }}
                         className={`
               transition-none outline-none relative text-center grid place-items-center
               after:content-[""] after:absolute after:bottom-0 after:h-[0.5px] after:bg-[#1d3413]

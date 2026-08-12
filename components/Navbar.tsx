@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
   const menuItems = [
     { id: 'about', label: 'I', path: '/about' },
     { id: 'study', label: 'study', path: '/study' },
-    { id: 'observe', label: 'observe', path: 'https://www.threads.com/@buithanhuong_as_usual', external: true },
+    { id: 'observe', label: 'observe', path: '/observe' },
     { id: 'work', label: 'and work', path: '/experiment' }
   ];
 
@@ -57,7 +57,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
         {menuItems.map((item) => (
           <button
             key={item.id}
-            onClick={() => navigate(item.path)}
+            onClick={() => {
+              if (item.id === 'observe') {
+                window.open('https://www.threads.com/@buithanhuong_as_usual', '_blank');
+              } else {
+                navigate(item.path);
+              }
+            }}
             className={`
               transition-none outline-none relative text-center grid place-items-center after:transition-all after:duration-300 pointer-events-auto
               ${currentPage === item.id
