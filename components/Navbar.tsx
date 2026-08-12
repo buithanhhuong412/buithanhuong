@@ -3,7 +3,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import WannaTalk from './WannaTalk';
 import { COLORS, TYPOGRAPHY, SPACING } from '../config/designTokens';
-import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
   currentPage: string;
