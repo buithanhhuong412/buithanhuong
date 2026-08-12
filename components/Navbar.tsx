@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage }) => {
   const menuItems = [
     { id: 'about', label: 'I', path: '/about' },
     { id: 'study', label: 'study', path: '/study' },
-    { id: 'observe', label: 'observe', path: '/observe' },
+    { id: 'observe', label: 'observe', path: 'https://www.threads.com/@buithanhuong_as_usual', external: true },
     { id: 'work', label: 'and work', path: '/experiment' }
   ];
 
