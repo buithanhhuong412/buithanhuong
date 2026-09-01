@@ -138,27 +138,6 @@ const Hero: React.FC<HeroProps> = () => {
         }
       `}</style>
 
-
-      {/* Right side decoration - fixed to screen right edge */}
-      <div
-        className="absolute flex items-center justify-center pointer-events-none hidden lg:flex"
-        style={{
-          right: '-105px',
-          top: '150px',
-          width: '200px',
-          height: '100px'
-        }}
-      >
-        <div style={{ transform: 'rotate(-32.491degdeg)', width: '300px', height: '250px', opacity: 0.3 }}>
-          <img
-            src={rainbowLightSticker286Url}
-            alt=""
-            className="w-full h-full object-cover"
-            style={{ opacity: 1 }}
-          />
-        </div>
-      </div>
-
       {/* Additional bottom-right large decoration */}
       <div
         className="absolute flex items-center justify-center pointer-events-none hidden lg:flex"
