@@ -91,7 +91,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Actual Content - Interests */}
-            <div className="w-full md:w-auto ml-0 md:ml-[340px] md:space-y-4 px-2 md:px-[16px] py-0 md:py-[32px]">
+            <div className="w-full md:w-auto ml-0 md:ml-[352px] md:space-y-4 px-2 md:px-[16px] py-0 md:py-[32px]">
               {currentInterests.map((item, idx) => (
                 <div key={idx} className="flex flex-col md:flex-row gap-0 md:gap-8 text-[16px] leading-[20px] items-center md:items-start text-center md:text-left">
                   {/* Mobile: Inline text */}
@@ -129,7 +129,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Actual Content - History */}
-            <div className="w-full md:w-auto ml-0 md:ml-[340px] space-y-4 md:space-y-4 px-0 md:px-[16px] md:py-[32px] py-0">
+            <div className="w-full md:w-auto ml-0 md:ml-[352px] space-y-4 md:space-y-4 px-0 md:px-[16px] md:py-[32px] py-0">
               {history.map((item, idx) => (
                 <div key={idx} className="flex flex-row md:flex-row gap-4 md:gap-8 text-[16px] leading-[20px] justify-between md:justify-start items-start text-left w-full">
                   <span className="w-[120px] md:w-[120px] shrink-0 text-[#1d3413] font-normal whitespace-nowrap">{item.period}</span>
