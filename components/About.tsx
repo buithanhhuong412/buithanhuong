@@ -5,9 +5,9 @@ import { COLORS, TYPOGRAPHY } from '../config/designTokens';
 
 const About: React.FC = () => {
   const currentInterests = [
-    { label: 'coding', desc: 'this site myself' },
     { label: 'learning', desc: 'product analytics and management' },
     { label: 'coloring', desc: 'what color was your day?' },
+    { label: 'coding', desc: 'this site myself' },
     { label: 'crocheting', desc: 'things at felicità' },
   ];
 
