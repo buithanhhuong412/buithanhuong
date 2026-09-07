@@ -88,7 +88,7 @@ const Contact: React.FC<ContactProps> = () => {
                     </div>
 
                     {/* Actual Content aligned with ghost structure */}
-                    <div className="ml-0 md:ml-[340px] flex flex-col space-y-4 text-left md:text-left px-0 md:px-[16px] py-[32px] w-full">
+                    <div className="ml-0 md:ml-[372px] flex flex-col space-y-4 text-left md:text-left px-0 md:px-[16px] py-[32px] w-full">
                         {contacts.map((item, i) => (
                             <div key={i} className="flex flex-row items-baseline gap-4 md:gap-8">
                                 <span className="text-[16px] font-stix text-[#1d3413] leading-[20px] min-w-[120px]">
