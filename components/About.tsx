@@ -15,7 +15,7 @@ const About: React.FC = () => {
     { period: '2021 - now', desc: 'design digital product' },
     { period: '2020 - 2021', desc: 'simulate energy and audit green building' },
     { period: '2018 - 2021', desc: 'design architecture' },
-    { period: '2013 - 2018', desc: 'learn architecture & design' },
+    { period: '2013 - 2018', desc: 'study architecture & design' },
   ];
 
   return (
