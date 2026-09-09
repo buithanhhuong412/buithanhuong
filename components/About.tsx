@@ -101,7 +101,23 @@ const About: React.FC = () => {
                   </span>
                   {/* Desktop: Columns */}
                   <span className="hidden md:block w-full md:w-[120px] h-auto md:h-[20px] shrink-0 text-[#1d3413] font-medium md:font-normal">{item.label}</span>
-                  <span className="hidden md:block text-[#1d3413]">{item.desc}</span>
+                  <span className="hidden md:block text-[#1d3413]">
+                    {item.label === 'crocheting' ? (
+                      <>
+                        things at{' '}
+                        <a
+                          href="https://www.instagram.com/felicita________"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="cursor-pointer"
+                        >
+                          felicità
+                        </a>
+                      </>
+                    ) : (
+                      item.desc
+                    )}
+                  </span>
                 </div>
               ))}
             </div>
