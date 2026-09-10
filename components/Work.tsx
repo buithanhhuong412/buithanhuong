@@ -196,28 +196,36 @@ const Work: React.FC = () => {
               className="!flex items-end !h-auto"
             >
               <div
-                className="space-y-4 flex flex-col items-center group flex-shrink-0 work-item-container"
+                className="flex flex-col items-center group flex-shrink-0 work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
                   setSelectedProject(p);
                 }}
               >
-                <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="w-full h-full object-cover transition-all duration-1000"
-                  />
+                <div className="relative w-full">
+                  {/* ẢNH */}
+                  <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="w-full h-full object-cover transition-all duration-1000"
+                    />
+                  </div>
+
+                  {/* TITLE */}
+                  <div className="absolute top-full left-0 w-full pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                    <p
+                      className="font-stix text-[16px] text-[#1d3413] whitespace-pre-line leading-[20px]"
+                      style={{
+                        fontFamily: '"STIX Two Text", serif',
+                        fontStyle: 'normal',
+                        fontWeight: 400
+                      }}
+                    >
+                      {p.title}
+                    </p>
+                  </div>
                 </div>
-                <div className="opacity-0 group-hover:opacity-100 mt-4 text-center">
-                  <p
-                    className="font-stix text-[16px] text-[#1d3413] whitespace-pre-line leading-[20px]"
-                    style={{
-                      fontFamily: '"STIX Two Text", serif',
-                      fontStyle: 'normal',
-                      fontWeight: 400
-                    }}
-                  >
                     {p.title}
                   </p>
 
