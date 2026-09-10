@@ -3,7 +3,7 @@ import { DEFAULT_ARTICLE } from '../thought-content';
 
 const popup: PageExperimentPopup = {
     slug: 'vgbc-green-building-platform',
-    title: 'VGBC - Green Building Platform (ux design)(ui design)',
+    title: 'VGBC - Green Building Platform',
     img: '/images/2.avif',
     scale: 0.1,
     marginRight: 85,
