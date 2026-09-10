@@ -223,7 +223,7 @@ const Work: React.FC = () => {
                       fontFamily: '"STIX Two Text", serif',
                       fontStyle: 'normal',
                       fontWeight: 400,
-                      whiteSpace: 'pre',
+                      whiteSpace: 'nowrap',
                       textAlign: 'center',
                       margin: 0,
                     }}
