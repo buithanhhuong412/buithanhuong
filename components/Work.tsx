@@ -211,9 +211,10 @@ const Work: React.FC = () => {
 
                 {/* TITLE */}
                 <div
-                  className="absolute left-1/2 top-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  className="absolute left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{
-                    transform: 'translate(-50%, -50%)',
+                    top: 'calc(100% + 32px)',
+                    transform: 'translateX(-50%)',
                     width: 'max-content',
                   }}
                 >
