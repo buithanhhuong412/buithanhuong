@@ -191,7 +191,7 @@ const Work: React.FC = () => {
             <SwiperSlide
               key={i}
               style={{ width: 'auto', paddingRight: `${p.marginRight}px` }}
-              className="!flex items-start !h-auto"
+              className="!flex items-end !h-auto"
             >
               <div
                 className="relative flex-shrink-0 group work-item-container h-[244px] flex items-end"
