@@ -209,12 +209,31 @@ const Work: React.FC = () => {
                     className="w-full h-full object-cover transition-all duration-1000"
                   />
                 </div>
-                <p
-                  className="font-stix text-[16px] text-[#1d3413] opacity-0 group-hover:opacity-100 whitespace-nowrap mt-4 leading-[20px] text-center"
-                  style={{ fontFamily: '"STIX Two Text", serif', fontStyle: 'normal', fontWeight: 400 }}
-                >
-                  {p.title}
-                </p>
+                <div className="opacity-0 group-hover:opacity-100 mt-4 text-center">
+                  <p
+                    className="font-stix text-[16px] text-[#1d3413] whitespace-nowrap leading-[20px]"
+                    style={{
+                      fontFamily: '"STIX Two Text", serif',
+                      fontStyle: 'normal',
+                      fontWeight: 400
+                    }}
+                  >
+                    {p.title}
+                  </p>
+
+                  {p.tags && p.tags.length > 0 && (
+                    <div className="flex justify-center flex-wrap gap-2 mt-2">
+                      {p.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[11px] text-[#1d3413] border border-[#1d3413] rounded-full px-3 py-1 whitespace-nowrap"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </SwiperSlide>
           ))}
