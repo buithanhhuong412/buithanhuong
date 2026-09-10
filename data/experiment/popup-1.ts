@@ -3,12 +3,10 @@ import { DEFAULT_ARTICLE } from '../thought-content';
 
 const popup: PageExperimentPopup = {
     slug: 'vgbc-green-building-platform',
-    title: 'VGBC - Green Building Platform',
+    title: 'VGBC - Green Building Platform (ux design)(ui design)',
     img: '/images/2.avif',
     scale: 0.1,
     marginRight: 85,
-
-    tags: ['Design', 'Branding', 'Photography'],
 
     // Replace DEFAULT_ARTICLE with an inline `{ intro, blocks }` object
     // when this popup needs its own custom content.
