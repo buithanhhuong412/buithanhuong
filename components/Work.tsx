@@ -211,7 +211,7 @@ const Work: React.FC = () => {
                 </div>
                 <div className="opacity-0 group-hover:opacity-100 mt-4 text-center">
                   <p
-                    className="font-stix text-[16px] text-[#1d3413] whitespace-nowrap leading-[20px]"
+                    className="font-stix text-[16px] text-[#1d3413] whitespace-pre-line leading-[20px]"
                     style={{
                       fontFamily: '"STIX Two Text", serif',
                       fontStyle: 'normal',
