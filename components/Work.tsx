@@ -9,27 +9,34 @@ import 'swiper/css/free-mode';
 import 'swiper/css/autoplay';
 
 import ThoughtDetailModal from './ThoughtDetail';
-import { PAGE_EXPERIMENT_POPUPS, PageExperimentPopup } from '../data/experiment';
+import {
+  PAGE_EXPERIMENT_POPUPS,
+  PageExperimentPopup,
+} from '../data/experiment';
 
 const Work: React.FC = () => {
   const { projectId } = useParams();
+
   useEffect(() => {
-    console.log("Work mounted");
+    console.log('Work mounted');
 
     return () => {
-      console.log("Work unmounted");
+      console.log('Work unmounted');
     };
   }, []);
+
   useEffect(() => {
-    console.log("projectId changed:", projectId);
+    console.log('projectId changed:', projectId);
   }, [projectId]);
 
-  console.log("projectId:", projectId);
+  console.log('projectId:', projectId);
 
   const originalProjects = PAGE_EXPERIMENT_POPUPS;
 
-  const [selectedProject, setSelectedProject] = React.useState<PageExperimentPopup | null>(null);
-    useEffect(() => {
+  const [selectedProject, setSelectedProject] =
+    React.useState<PageExperimentPopup | null>(null);
+
+  useEffect(() => {
     if (!projectId) {
       setSelectedProject(null);
       return;
@@ -38,9 +45,12 @@ const Work: React.FC = () => {
     const project = originalProjects.find(
       (p) => p.slug === projectId
     );
-    
-    console.log("Found project:", project);
-    console.log("All slugs:", originalProjects.map(p => p.slug));
+
+    console.log('Found project:', project);
+    console.log(
+      'All slugs:',
+      originalProjects.map((p) => p.slug)
+    );
 
     if (project) {
       setSelectedProject(project);
@@ -52,35 +62,33 @@ const Work: React.FC = () => {
   const projects = Array(repeatCount)
     .fill(originalProjects)
     .flat();
-  
+
   const initialSlide =
-  Math.floor(repeatCount / 2) * originalProjects.length;
+    Math.floor(repeatCount / 2) * originalProjects.length;
 
   const swiperRef = useRef<SwiperType | null>(null);
 
   useEffect(() => {
     let velocityTracker = 0;
-    let lastTime = Date.now();
     let animationFrame: number;
 
     const smoothScroll = () => {
-      // Disabled for the new auto-scroll logic, or we can keep it for desktop if needed. 
-      // The user asked for "mobile auto scroll", but typically with Swiper Autoplay delay 0, it overrides manual control unless configured well.
-      // However, usually "drift" implies continuous movement.
-      if (!swiperRef.current || Math.abs(velocityTracker) < 0.1) {
+      if (
+        !swiperRef.current ||
+        Math.abs(velocityTracker) < 0.1
+      ) {
         velocityTracker = 0;
         return;
       }
 
       const swiper = swiperRef.current;
 
-      // Giảm dần velocity (friction)
       velocityTracker *= 0.94;
 
-      // Áp dụng velocity
       swiper.setTransition(0);
 
-      const newTranslate = swiper.getTranslate() + velocityTracker;
+      const newTranslate =
+        swiper.getTranslate() + velocityTracker;
 
       swiper.setTranslate(newTranslate);
 
@@ -93,34 +101,35 @@ const Work: React.FC = () => {
 
     const onWheel = (e: WheelEvent) => {
       if (!swiperRef.current) return;
+
       if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
 
-      // Stop autoplay on wheel
       if (swiperRef.current.autoplay.running) {
         swiperRef.current.autoplay.stop();
       }
 
       e.preventDefault();
 
-      const now = Date.now();
-      lastTime = now;
-
-      // Tính velocity mới dựa trên deltaY
       const wheelVelocity = -e.deltaY * 0.4;
 
-      // Cộng dồn velocity (để có cảm giác tích lũy khi scroll nhanh)
       velocityTracker += wheelVelocity;
 
-      // Giới hạn velocity tối đa
       const maxVelocity = 40;
-      velocityTracker = Math.max(-maxVelocity, Math.min(maxVelocity, velocityTracker));
 
-      // Bắt đầu animation nếu chưa chạy
+      velocityTracker = Math.max(
+        -maxVelocity,
+        Math.min(maxVelocity, velocityTracker)
+      );
+
       cancelAnimationFrame(animationFrame);
-      animationFrame = requestAnimationFrame(smoothScroll);
+
+      animationFrame =
+        requestAnimationFrame(smoothScroll);
     };
 
-    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('wheel', onWheel, {
+      passive: false,
+    });
 
     return () => {
       window.removeEventListener('wheel', onWheel);
@@ -131,20 +140,19 @@ const Work: React.FC = () => {
   return (
     <section className="h-screen md:min-h-0 md:h-screen mt-[20px] md:mt-0 py-0 md:pb-[30vh] px-0 w-full relative overflow-hidden flex flex-col md:justify-end">
 
-      {/* Unified Swiper Layout for both Mobile and Desktop */}
       <div className="w-full h-full relative">
+
         <style>{`
           .work-item-container {
-             /* Mobile: Use large reference width to keep images "PC-sized" */
-             width: calc(var(--scale) * 1440px); 
+            width: calc(var(--scale) * 1440px);
           }
+
           @media (min-width: 768px) {
             .work-item-container {
-               /* Desktop: Scale based on viewport width */
-               width: calc(var(--scale) * 100vw);
+              width: calc(var(--scale) * 100vw);
             }
           }
-          /* Smooth linear scrolling for Marquee effect - MOBILE ONLY */
+
           @media (max-width: 767px) {
             .swiper-wrapper {
               transition-timing-function: linear !important;
@@ -153,7 +161,6 @@ const Work: React.FC = () => {
         `}</style>
 
         <div className="flex w-full items-end justify-start pointer-events-none absolute left-0 z-20 px-8 bottom-[20%]">
-          {/* ... keeping original absolute spacer label if needed, or remove if unused ... */}
         </div>
 
         <Swiper
@@ -178,42 +185,58 @@ const Work: React.FC = () => {
             sticky: false,
           }}
           grabCursor={false}
-          mousewheel={false} // Custom wheel implementation above
+          mousewheel={false}
           slidesOffsetBefore={32}
           keyboard={{
             enabled: true,
             onlyInViewport: true,
           }}
           modules={[FreeMode, Keyboard, Autoplay]}
-          className="w-full h-full flex items-end swiper-work"
+          className="w-full h-full flex items-end swiper-work !overflow-visible"
         >
+
           {projects.map((p, i) => (
             <SwiperSlide
               key={i}
-              style={{ width: 'auto', paddingRight: `${p.marginRight}px` }}
-              className="!flex items-end !h-auto"
+              style={{
+                width: 'auto',
+                paddingRight: `${p.marginRight}px`,
+              }}
+              className="!flex !items-end !h-auto !overflow-visible"
             >
+
               <div
                 className="relative flex-shrink-0 group work-item-container"
-                style={{ '--scale': p.scale } as React.CSSProperties}
+                style={
+                  {
+                    '--scale': p.scale,
+                  } as React.CSSProperties
+                }
                 onClick={() => {
                   setSelectedProject(p);
                 }}
               >
-                {/* ẢNH */}
-                <div className="relative w-full overflow-visible transition-all duration-700 cursor-pointer max-h-[244px]">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="w-full h-full flex items-end swiper-work !overflow-visible"
-                  />
+
+                {/* IMAGE */}
+                <div className="relative w-full overflow-visible cursor-pointer">
+
+                  {/* Image wrapper */}
+                  <div className="relative w-full overflow-hidden transition-all duration-700 max-h-[244px]">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="block w-full h-full object-cover transition-all duration-1000"
+                    />
+                  </div>
 
                   {/* TITLE */}
                   <div
-                    className="absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    className="absolute left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                     style={{
-                      top: '276px',
-                      width: '100%',
+                      top: 'calc(100% + 32px)',
+                      transform: 'translateX(-50%)',
+                      width: 'max-content',
+                      maxWidth: 'none',
                     }}
                   >
                     <p
@@ -222,7 +245,13 @@ const Work: React.FC = () => {
                         fontFamily: '"STIX Two Text", serif',
                         fontStyle: 'normal',
                         fontWeight: 400,
-                        whiteSpace: 'nowrap',
+
+                        /*
+                         * Cho phép \n trong title tạo xuống dòng.
+                         * Không tự động wrap nếu không có \n.
+                         */
+                        whiteSpace: 'pre',
+
                         textAlign: 'center',
                         margin: 0,
                       }}
@@ -230,9 +259,14 @@ const Work: React.FC = () => {
                       {p.title}
                     </p>
                   </div>
+
                 </div>
+
+              </div>
+
             </SwiperSlide>
           ))}
+
         </Swiper>
       </div>
 
@@ -241,7 +275,17 @@ const Work: React.FC = () => {
         onClose={() => {
           setSelectedProject(null);
         }}
-        data={selectedProject ? { text: selectedProject.title, article: selectedProject.article, image: { src: selectedProject.img } } : null}
+        data={
+          selectedProject
+            ? {
+                text: selectedProject.title,
+                article: selectedProject.article,
+                image: {
+                  src: selectedProject.img,
+                },
+              }
+            : null
+        }
       />
 
     </section>
