@@ -194,7 +194,7 @@ const Work: React.FC = () => {
               className="!flex items-start !h-auto"
             >
               <div
-                className="relative flex flex-col items-center group flex-shrink-0 work-item-container"
+                className="relative flex-shrink-0 group work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
                   setSelectedProject(p);
@@ -205,19 +205,27 @@ const Work: React.FC = () => {
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="w-full h-full object-cover transition-all duration-1000"
+                    className="block w-full h-full object-cover transition-all duration-1000"
                   />
                 </div>
 
-                {/* TITLE - không ảnh hưởng vị trí ảnh */}
-                <div className="absolute top-full left-0 w-full pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                {/* TITLE */}
+                <div
+                  className="absolute left-1/2 top-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    transform: 'translate(-50%, -50%)',
+                    width: 'max-content',
+                  }}
+                >
                   <p
-                    className="font-stix text-[16px] text-[#1d3413] leading-[20px] text-center"
+                    className="font-stix text-[16px] text-[#1d3413] leading-[20px]"
                     style={{
-                      whiteSpace: 'pre',
                       fontFamily: '"STIX Two Text", serif',
                       fontStyle: 'normal',
-                      fontWeight: 400
+                      fontWeight: 400,
+                      whiteSpace: 'pre',
+                      textAlign: 'center',
+                      margin: 0,
                     }}
                   >
                     {p.title}
