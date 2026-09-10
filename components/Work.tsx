@@ -231,9 +231,9 @@ const Work: React.FC = () => {
 
                   {/* TITLE */}
                   <div
-                    className="absolute left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    className="absolute left-1/2 pointer-events-none"
                     style={{
-                      top: 'calc(100% + 32px)',
+                      top: 'calc(100% + 24px)',
                       transform: 'translateX(-50%)',
                       width: 'max-content',
                       maxWidth: 'none',
