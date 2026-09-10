@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { FreeMode, Keyboard, Autoplay } from 'swiper/modules';
@@ -25,7 +25,6 @@ const Work: React.FC = () => {
   }, [projectId]);
 
   console.log("projectId:", projectId);
-  const navigate = useNavigate();
 
   const originalProjects = PAGE_EXPERIMENT_POPUPS;
 
@@ -104,7 +103,6 @@ const Work: React.FC = () => {
       e.preventDefault();
 
       const now = Date.now();
-      const deltaTime = now - lastTime;
       lastTime = now;
 
       // Tính velocity mới dựa trên deltaY
@@ -193,55 +191,37 @@ const Work: React.FC = () => {
             <SwiperSlide
               key={i}
               style={{ width: 'auto', paddingRight: `${p.marginRight}px` }}
-              className="!flex items-end !h-auto"
+              className="!flex items-start !h-auto"
             >
               <div
-                className="flex flex-col items-center group flex-shrink-0 work-item-container"
+                className="relative flex flex-col items-center group flex-shrink-0 work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
                   setSelectedProject(p);
                 }}
               >
-                <div className="relative w-full">
-                  {/* ẢNH */}
-                  <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      className="w-full h-full object-cover transition-all duration-1000"
-                    />
-                  </div>
-
-                  {/* TITLE */}
-                  <div className="absolute top-full left-0 w-full pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
-                    <p
-                      className="font-stix text-[16px] text-[#1d3413] leading-[20px] text-center"
-                      style={{
-                        whiteSpace: 'pre',
-                        fontFamily: '"STIX Two Text", serif',
-                        fontStyle: 'normal',
-                        fontWeight: 400
-                      }}
-                    >
-                      {p.title}
-                    </p>
-                  </div>
+                {/* ẢNH */}
+                <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="w-full h-full object-cover transition-all duration-1000"
+                  />
                 </div>
+
+                {/* TITLE - không ảnh hưởng vị trí ảnh */}
+                <div className="absolute top-full left-0 w-full pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                  <p
+                    className="font-stix text-[16px] text-[#1d3413] leading-[20px] text-center"
+                    style={{
+                      whiteSpace: 'pre',
+                      fontFamily: '"STIX Two Text", serif',
+                      fontStyle: 'normal',
+                      fontWeight: 400
+                    }}
+                  >
                     {p.title}
                   </p>
-
-                  {p.tags && p.tags.length > 0 && (
-                    <div className="flex justify-center flex-wrap gap-2 mt-2">
-                      {p.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[11px] text-[#1d3413] border border-[#1d3413] rounded-full px-3 py-1 whitespace-nowrap"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             </SwiperSlide>
