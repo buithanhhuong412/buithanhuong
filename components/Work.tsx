@@ -201,38 +201,36 @@ const Work: React.FC = () => {
                 }}
               >
                 {/* ẢNH */}
-                <div className="relative w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
+                <div className="relative w-full overflow-visible transition-all duration-700 cursor-pointer max-h-[244px]">
                   <img
                     src={p.img}
                     alt={p.title}
                     className="block w-full h-full object-cover transition-all duration-1000"
                   />
-                </div>
 
-                {/* TITLE */}
-                <div
-                  className="absolute left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{
-                    top: 'calc(100% + 32px)',
-                    transform: 'translateX(-50%)',
-                    width: 'max-content',
-                  }}
-                >
-                  <p
-                    className="font-stix text-[16px] text-[#1d3413] leading-[20px]"
+                  {/* TITLE */}
+                  <div
+                    className="absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                     style={{
-                      fontFamily: '"STIX Two Text", serif',
-                      fontStyle: 'normal',
-                      fontWeight: 400,
-                      whiteSpace: 'nowrap',
-                      textAlign: 'center',
-                      margin: 0,
+                      top: 'calc(100% + 32px)',
+                      width: '100%',
                     }}
                   >
-                    {p.title}
-                  </p>
+                    <p
+                      className="font-stix text-[16px] text-[#1d3413] leading-[20px]"
+                      style={{
+                        fontFamily: '"STIX Two Text", serif',
+                        fontStyle: 'normal',
+                        fontWeight: 400,
+                        whiteSpace: 'nowrap',
+                        textAlign: 'center',
+                        margin: 0,
+                      }}
+                    >
+                      {p.title}
+                    </p>
+                  </div>
                 </div>
-              </div>
             </SwiperSlide>
           ))}
         </Swiper>
