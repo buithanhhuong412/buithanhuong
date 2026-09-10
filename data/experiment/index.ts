@@ -4,14 +4,14 @@
 // =====================================================================
 
 import type { PageExperimentPopup } from './types';
-import popup1 from './popup-1';
-import popup2 from './popup-2';
-import popup3 from './popup-3';
-import popup4 from './popup-4';
-import popup5 from './popup-5';
-import popup6 from './popup-6';
-import popup7 from './popup-7';
-import popup8 from './popup-8';
+import popup2 from './a-seal-imprint';
+import popup1 from './vgbc';
+import popup3 from './vnielts';
+import popup4 from './fishy-feast';
+import popup5 from './what-color';
+import popup6 from './vici-dentia';
+import popup7 from './kickstar';
+import popup8 from './theu-mua-thu';
 
 export const PAGE_EXPERIMENT_POPUPS: PageExperimentPopup[] = [
     popup1,
