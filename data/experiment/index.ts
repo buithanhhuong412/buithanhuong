@@ -16,8 +16,8 @@ import popup8 from './theu-mua-thu';
 
 export const PAGE_EXPERIMENT_POPUPS: PageExperimentPopup[] = [
     popup2,
-    popup1,
     popup3,
+    popup1,
     popup4,
     popup5,
     popup6,
