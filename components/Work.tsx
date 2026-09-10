@@ -194,7 +194,7 @@ const Work: React.FC = () => {
               className="!flex items-end !h-auto"
             >
               <div
-                className="relative flex-shrink-0 group work-item-container h-[244px] flex items-end"
+                className="relative flex-shrink-0 group work-item-container flex items-end"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
                   setSelectedProject(p);
