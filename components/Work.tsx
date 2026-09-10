@@ -194,14 +194,14 @@ const Work: React.FC = () => {
               className="!flex items-start !h-auto"
             >
               <div
-                className="relative flex-shrink-0 group work-item-container"
+                className="relative flex-shrink-0 group work-item-container h-[244px] flex items-end"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
                   setSelectedProject(p);
                 }}
               >
                 {/* ẢNH */}
-                <div className="w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
+                <div className="relative w-full overflow-hidden transition-all duration-700 cursor-pointer max-h-[244px]">
                   <img
                     src={p.img}
                     alt={p.title}
