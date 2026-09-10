@@ -4,8 +4,9 @@
 // =====================================================================
 
 import type { PageExperimentPopup } from './types';
-import a-seal-imprint from './a-seal-imprint';
+
 import popup1 from './vgbc';
+import popup2 from './a-seal-imprint';
 import popup3 from './vnielts';
 import popup4 from './fishy-feast';
 import popup5 from './what-color';
@@ -14,8 +15,8 @@ import popup7 from './kickstar';
 import popup8 from './theu-mua-thu';
 
 export const PAGE_EXPERIMENT_POPUPS: PageExperimentPopup[] = [
+    popup2,
     popup1,
-    a-seal-imprint,
     popup3,
     popup4,
     popup5,
