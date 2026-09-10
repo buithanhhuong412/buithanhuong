@@ -3,7 +3,7 @@ import { DEFAULT_ARTICLE } from '../thought-content';
 
 const popup: PageExperimentPopup = {
     slug: 'vnielts',
-    title: 'vnielts',
+    title: 'VnIELTs - IELTs self-learning platform',
     img: '/images/4.avif',
     scale: 0.15,
     marginRight: 120,
