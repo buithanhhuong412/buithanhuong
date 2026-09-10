@@ -6,7 +6,7 @@ const popup: PageExperimentPopup = {
     title: 'What color was your day?',
     img: '/images/6.avif',
     scale: 0.07,
-    marginRight: 80,
+    marginRight: 180,
     article: DEFAULT_ARTICLE,
 };
 
