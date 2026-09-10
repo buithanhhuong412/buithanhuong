@@ -194,7 +194,7 @@ const Work: React.FC = () => {
               className="!flex items-end !h-auto"
             >
               <div
-                className="relative flex-shrink-0 group work-item-container flex items-end"
+                className="relative flex-shrink-0 group work-item-container"
                 style={{ '--scale': p.scale } as React.CSSProperties}
                 onClick={() => {
                   setSelectedProject(p);
@@ -205,14 +205,14 @@ const Work: React.FC = () => {
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="block w-full h-full object-cover transition-all duration-1000"
+                    className="w-full h-full flex items-end swiper-work !overflow-visible"
                   />
 
                   {/* TITLE */}
                   <div
                     className="absolute left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                     style={{
-                      top: 'calc(100% + 32px)',
+                      top: '276px',
                       width: '100%',
                     }}
                   >
