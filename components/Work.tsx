@@ -215,8 +215,9 @@ const Work: React.FC = () => {
                   {/* TITLE */}
                   <div className="absolute top-full left-0 w-full pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
                     <p
-                      className="font-stix text-[16px] text-[#1d3413] whitespace-pre-line leading-[20px]"
+                      className="font-stix text-[16px] text-[#1d3413] leading-[20px] text-center"
                       style={{
+                        whiteSpace: 'pre',
                         fontFamily: '"STIX Two Text", serif',
                         fontStyle: 'normal',
                         fontWeight: 400
