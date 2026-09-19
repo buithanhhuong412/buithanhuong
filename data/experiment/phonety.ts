@@ -4,7 +4,7 @@ import { DEFAULT_ARTICLE } from '../thought-content';
 const popup: PageExperimentPopup = {
     slug: 'phonety',
     title: 'Phonety',
-    img: '/images/1.avif',
+    img: '/images/123.avif',
     scale: 0.1,
     marginRight: 110,
     article: DEFAULT_ARTICLE,
