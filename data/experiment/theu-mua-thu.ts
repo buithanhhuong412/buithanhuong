@@ -4,7 +4,7 @@ import { DEFAULT_ARTICLE } from '../thought-content';
 const popup: PageExperimentPopup = {
     slug: 'theu-mua-thu',
     title: 'Thêu một mùa thu',
-    img: '/images/123.avif',
+    img: '/images/1.avif',
     scale: 0.1,
     marginRight: 110,
     article: DEFAULT_ARTICLE,
