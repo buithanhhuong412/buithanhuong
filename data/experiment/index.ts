@@ -13,9 +13,11 @@ import popup5 from './what-color';
 import popup6 from './vici-dentia';
 import popup7 from './kickstar';
 import popup8 from './theu-mua-thu';
+import phonety from './phonety';
 
 export const PAGE_EXPERIMENT_POPUPS: PageExperimentPopup[] = [
     popup2,
+    phonety,
     popup3,
     popup1,
     popup4,
